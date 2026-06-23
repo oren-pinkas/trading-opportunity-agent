@@ -100,3 +100,15 @@ def test_simulate_dossier_handles_missing_data(tmp_path):
     assert fm["status"] == "simulated"                # terminal, not retried forever
     assert dossier.validate_frontmatter(fm) == []
     assert "unavailable" in body.lower()
+
+
+from lib.ledger import regenerate_index
+
+
+def test_regenerate_index_writes_rows(tmp_path):
+    _seed(tmp_path, "a", _scheduled_fm("a", "2026-07-10T13:12:00Z"))
+    out = tmp_path / "INDEX.md"
+    text = regenerate_index(base=str(tmp_path), out_path=str(out))
+    assert "NOT FINANCIAL ADVICE" in text
+    assert "| a |" in text
+    assert out.read_text() == text

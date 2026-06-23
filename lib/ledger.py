@@ -91,3 +91,23 @@ def simulate_dossier(path: str, now: str, provider: str = "stub",
     return {"id": fm.get("id"), "outcome": block["outcome"],
             "realized_profit_pct": block["realized_profit_pct"],
             "matched_hypothesis": block["matched_hypothesis"]}
+
+
+from lib import index as _index
+
+
+def regenerate_index(base: str = LEDGER_DIR, out_path: str = "INDEX.md") -> str:
+    rows: list[dict] = []
+    if os.path.isdir(base):
+        for entry in sorted(os.listdir(base)):
+            p = os.path.join(base, entry, "dossier.md")
+            if not os.path.isfile(p):
+                continue
+            fm, _ = _dossier.load(p)
+            rows.append({"id": fm.get("id", entry), "title": fm.get("title", ""),
+                         "status": fm.get("status", ""),
+                         "outcome": (fm.get("simulation") or {}).get("outcome")})
+    text = _index.render_index(rows)
+    with open(out_path, "w", encoding="utf-8") as fh:
+        fh.write(text)
+    return text
