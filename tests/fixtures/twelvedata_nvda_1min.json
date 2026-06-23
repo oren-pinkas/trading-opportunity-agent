@@ -1,0 +1,8 @@
+{
+  "meta": {"symbol": "NVDA", "interval": "1min", "exchange_timezone": "UTC"},
+  "values": [
+    {"datetime": "2026-07-10 13:12:00", "open": "120.50", "high": "120.80", "low": "120.40", "close": "120.75"},
+    {"datetime": "2026-07-10 13:00:00", "open": "118.20", "high": "118.60", "low": "118.10", "close": "118.55"}
+  ],
+  "status": "ok"
+}
