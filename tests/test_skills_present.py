@@ -2,7 +2,9 @@ from pathlib import Path
 
 import yaml
 
-SKILLS = ["market-data", "simulate-plans"]
+SKILLS = ["market-data", "simulate-plans", "scout-news",
+          "research-debate", "debate-three-round-panel",
+          "post-mortem", "pm-investigator-critic"]
 
 
 def _frontmatter(path):

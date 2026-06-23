@@ -1,0 +1,5 @@
+{
+  "strategy": "investigator-critic",
+  "roles": ["investigator", "critic"],
+  "models": {"investigator": "sonnet", "critic": "opus", "synthesizer": "opus"}
+}
