@@ -138,8 +138,11 @@ spawn subagents → write results back → update status.*
 
 ### ① `scout-news` — Haiku, 3×/day
 Searches news (WebSearch/WebFetch) for **forward-looking, market-moving** events.
-For each: extracts event, expected impact window, candidate tickers; **dedupes**
-against open opportunities in `INDEX.md`. Writes new `opportunities/<id>/dossier.md`
+Scout breadth is **open-ended** for v1 (no fixed beats; `scout.json` `source_hints[]`
+left empty). For each: extracts event, expected impact window, candidate tickers;
+**dedupes** against open opportunities in `INDEX.md` (dedupe window: **14 days** — a
+scouted event is not re-created within 14 days of its last sighting). Writes new
+`opportunities/<id>/dossier.md`
 at status `scouted` with cited sources. Cheap model on purpose — filtering, not
 judgement.
 
@@ -256,13 +259,27 @@ swapping a strategy or wiring the real data provider can't silently break a neig
 - **Quant / Pragmatist** — data/probability-driven; base rates, historical analogues,
   expected value after costs, position sizing.
 
+## 7a. Market data provider — Twelve Data (free tier)
+
+`market-data` calls **Twelve Data** (`api.twelvedata.com/time_series`,
+`interval=1min`) on its **free tier**: 800 requests/day, 8 requests/min, US equities
+intraday included, **$0, no credit card**. Our access pattern is batch-and-historical
+(daily simulator run, ~2 reads per plan leg), which fits free quotas with wide margin
+— a few hundred simulated plans/day before paid tiers ($29+/mo) would ever apply.
+
+- The `market-data` skill still hides the provider behind the fixed contract
+  `(ticker, timestamp) → {price, source, fetched_at}`, so the provider remains a
+  one-file swap. **Build order:** a deterministic **stub** implements the contract
+  first so the whole pipeline can be validated end-to-end; the live Twelve Data call
+  drops in behind the same contract.
+- The skill must **throttle to ≤8 req/min** and cache fetched bars per
+  `(ticker, date)` under the opportunity folder so re-runs don't re-spend quota.
+- Requires a free API key in an env var (e.g. `TWELVEDATA_API_KEY`); never committed.
+- Granularity: **intraday minute/hourly** so plans can express "buy 13:00 → sell
+  13:12 UTC".
+
 ## 8. Deferred / out of scope for v1
 
-- **Real market-data provider.** `market-data` is **stubbed** behind a fixed contract
-  `(ticker, timestamp) → {price, source, fetched_at}` (deterministic fake or local
-  fixtures). Swapping in a real **intraday** provider (Twelve Data / Polygon /
-  Alpha Vantage — TBD, requires an API key) is a one-file change later. Granularity
-  target is **intraday minute/hourly** so plans can express "buy 13:00 → sell 13:12 UTC".
 - Real order execution — **never**; this is simulation only.
 - Portfolio-level accounting, position sizing across plans, risk budgeting — later.
 - Alternative strategies beyond the two defaults — additive, drop-in later.
@@ -271,7 +288,8 @@ swapping a strategy or wiring the real data provider can't silently break a neig
 
 - Substrate: **pure Claude Code**. ✅
 - Granularity: **intraday minute/hourly**. ✅
-- Data provider: **deferred / stubbed**. ✅
+- Data provider: **Twelve Data free tier** (stub first, live behind same contract). ✅
+- Scout breadth: **open-ended**; dedup window **14 days**. ✅
 - Debate: **3 independent persona subagents, 3 rounds, neutral synthesizer**. ✅
 - Modularity: **personas / strategy / model-map as three swappable slots via contracts**. ✅
 - Post-mortem: **modular 2-role team (Investigator + Critic + synth); losers + flukes only**. ✅
