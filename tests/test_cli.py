@@ -55,3 +55,22 @@ def test_cli_simulatable_lists_due(tmp_path):
     _seed_scheduled(tmp_path, "x")
     r = _run("simulatable", "--now", "2026-07-11T00:00:00Z", "--base", str(tmp_path))
     assert json.loads(r.stdout)["ids"] == ["x"]
+
+
+def test_cli_dedup_check(tmp_path):
+    _seed_scheduled(tmp_path, "x")  # tickers [USO], created 2026-06-22
+    r = _run("dedup-check", "--tickers", "USO", "--today", "2026-06-23", "--base", str(tmp_path))
+    assert json.loads(r.stdout)["duplicate"] is True
+
+
+def test_cli_postmortem_targets_empty(tmp_path):
+    r = _run("postmortem-targets", "--base", str(tmp_path))
+    assert json.loads(r.stdout)["ids"] == []
+
+
+def test_cli_new_opportunity(tmp_path):
+    r = _run("new-opportunity", "--id", "2026-06-23-fed", "--title", "Fed holds",
+             "--type", "macro", "--summary", "s", "--impact-window", "2026-07-30",
+             "--tickers", "SPY", "--source-title", "wire", "--source-url", "https://x",
+             "--now", "2026-06-23T10:00:00Z", "--base", str(tmp_path))
+    assert json.loads(r.stdout)["status"] == "scouted"
