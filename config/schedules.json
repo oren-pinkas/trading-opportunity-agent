@@ -1,0 +1,11 @@
+{
+  "timezone": "America/New_York",
+  "jobs": [
+    {"name": "scout-news-am",   "skill": "scout-news",      "cron": "0 7 * * *"},
+    {"name": "scout-news-mid",  "skill": "scout-news",      "cron": "30 12 * * *"},
+    {"name": "scout-news-pm",   "skill": "scout-news",      "cron": "0 17 * * *"},
+    {"name": "research-debate", "skill": "research-debate", "cron": "0 8 * * *"},
+    {"name": "simulate-plans",  "skill": "simulate-plans",  "cron": "30 18 * * *"},
+    {"name": "post-mortem",     "skill": "post-mortem",     "cron": "30 19 * * *"}
+  ]
+}
