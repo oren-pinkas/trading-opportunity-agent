@@ -9,3 +9,6 @@ historical prices, and runs post-mortems that feed a learning loop.
 > for research and learning purposes only.
 
 See `docs/superpowers/specs/2026-06-23-trading-opportunity-agent-design.md` for the design.
+
+## Operations
+See `SCHEDULES.md` for the scheduled-stage runbook and how to activate it.
