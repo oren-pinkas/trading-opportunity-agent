@@ -114,3 +114,58 @@ def regenerate_index(base: str = LEDGER_DIR, out_path: str = "INDEX.md") -> str:
     with open(out_path, "w", encoding="utf-8") as fh:
         fh.write(text)
     return text
+
+
+from lib import lessons as _lessons
+
+
+def find_postmortem_targets(base: str = LEDGER_DIR) -> list[dict]:
+    out: list[dict] = []
+    for item in list_by_status("simulated", base):
+        sim = item["fm"].get("simulation") or {}
+        outcome = sim.get("outcome")
+        matched = sim.get("matched_hypothesis")
+        if outcome == "loss" or (outcome in {"win", "neutral"} and matched == "no"):
+            out.append(item)
+    return out
+
+
+def create_opportunity(oid: str, title: str, event: dict, tickers: list,
+                       sources: list, now: str, base: str = LEDGER_DIR) -> str:
+    d = os.path.join(base, oid)
+    os.makedirs(d, exist_ok=True)
+    fm = {"id": oid, "title": title, "status": "scouted", "created": now,
+          "event": event, "tickers": tickers, "sources": sources}
+    path = os.path.join(d, "dossier.md")
+    _dossier.save(path, fm, f"## Scouted {now}\n")
+    return path
+
+
+def existing_for_dedup(base: str = LEDGER_DIR) -> list[dict]:
+    rows: list[dict] = []
+    if not os.path.isdir(base):
+        return rows
+    for entry in sorted(os.listdir(base)):
+        p = os.path.join(base, entry, "dossier.md")
+        if not os.path.isfile(p):
+            continue
+        fm, _ = _dossier.load(p)
+        seen = (fm.get("research") or {}).get("last_updated") or fm.get("created", "")
+        seen = str(seen)[:10]
+        rows.append({"tickers": fm.get("tickers", []), "last_seen": seen})
+    return rows
+
+
+def record_postmortem(path: str, root_cause: str, lessons: list, now: str,
+                      lessons_path: str = "lessons.yaml") -> dict:
+    fm, _ = _dossier.load(path)
+    block = {"ran_at": now, "root_cause": root_cause, "lessons": lessons}
+    _dossier.append_revision(path, {"status": "analyzed", "postmortem": block},
+                             f"Post-mortem: {root_cause}", ts=now)
+    event_type = (fm.get("event") or {}).get("type")
+    tickers = fm.get("tickers", [])
+    for text in lessons:
+        _lessons.append_lesson(lessons_path, {
+            "event_type": event_type, "tickers": tickers,
+            "text": text, "date": now[:10], "source_id": fm.get("id")})
+    return {"id": fm.get("id"), "root_cause": root_cause, "lessons_added": len(lessons)}

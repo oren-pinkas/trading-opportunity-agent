@@ -143,3 +143,61 @@ def test_regenerate_index_writes_rows(tmp_path):
     assert "NOT FINANCIAL ADVICE" in text
     assert "| a |" in text
     assert out.read_text() == text
+
+
+from lib.ledger import (find_postmortem_targets, create_opportunity,
+                        existing_for_dedup, record_postmortem)
+from lib.lessons import load_lessons
+
+
+def _simulated_fm(oid, outcome, matched):
+    fm = _scheduled_fm(oid, "2026-07-10T13:12:00Z")
+    fm["status"] = "simulated"
+    fm["simulation"] = {"ran_at": "2026-07-11T00:00:00Z", "fills": [],
+                        "realized_profit_pct": -1.0, "outcome": outcome,
+                        "matched_hypothesis": matched}
+    return fm
+
+
+def test_find_postmortem_targets_picks_losers_and_flukes(tmp_path):
+    _seed(tmp_path, "loss", _simulated_fm("loss", "loss", "no"))
+    _seed(tmp_path, "fluke", _simulated_fm("fluke", "win", "no"))
+    _seed(tmp_path, "clean", _simulated_fm("clean", "win", "yes"))
+    ids = sorted(i["id"] for i in find_postmortem_targets(base=str(tmp_path)))
+    assert ids == ["fluke", "loss"]
+
+
+def test_create_opportunity_writes_valid_scouted(tmp_path):
+    path = create_opportunity(
+        "2026-06-23-fed", "Fed holds", {"type": "macro", "summary": "s", "impact_window": "2026-07-30"},
+        ["SPY"], [{"title": "t", "url": "u", "accessed_at": "2026-06-23T10:00:00Z"}],
+        "2026-06-23T10:00:00Z", base=str(tmp_path))
+    fm, _ = dossier.load(path)
+    assert fm["status"] == "scouted"
+    assert fm["id"] == "2026-06-23-fed"
+    assert dossier.validate_frontmatter(fm) == []
+
+
+def test_existing_for_dedup_lists_tickers_and_date(tmp_path):
+    create_opportunity("2026-06-23-fed", "Fed", {"type": "macro", "summary": "s", "impact_window": "2026-07-30"},
+                       ["SPY", "QQQ"], [{"title": "t", "url": "u", "accessed_at": "x"}],
+                       "2026-06-23T10:00:00Z", base=str(tmp_path))
+    rows = existing_for_dedup(base=str(tmp_path))
+    assert rows == [{"tickers": ["SPY", "QQQ"], "last_seen": "2026-06-23"}]
+
+
+def test_record_postmortem_writes_block_and_lessons(tmp_path):
+    _seed(tmp_path, "loss", _simulated_fm("loss", "loss", "no"))
+    path = str(tmp_path / "loss" / "dossier.md")
+    store = str(tmp_path / "lessons.yaml")
+    summary = record_postmortem(path, "priced-in", ["entered too late"],
+                                "2026-07-12T00:00:00Z", lessons_path=store)
+    assert summary["lessons_added"] == 1
+    fm, _ = dossier.load(path)
+    assert fm["status"] == "analyzed"
+    assert fm["postmortem"]["root_cause"] == "priced-in"
+    assert dossier.validate_frontmatter(fm) == []
+    lessons = load_lessons(store)
+    assert lessons[0]["text"] == "entered too late"
+    assert lessons[0]["event_type"] == "geopolitical"
+    assert "USO" in lessons[0]["tickers"]
