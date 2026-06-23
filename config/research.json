@@ -1,0 +1,5 @@
+{
+  "strategy": "three-round-panel",
+  "personas": ["bull", "bear", "quant"],
+  "models": {"bull": "sonnet", "bear": "sonnet", "quant": "opus", "synthesizer": "opus"}
+}
