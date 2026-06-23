@@ -3,11 +3,16 @@ import hashlib
 import json
 import os
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 
 _CACHE: dict[tuple[str, str], dict] = {}
 _BASE = "https://api.twelvedata.com/time_series"
+
+
+class MarketDataUnavailable(Exception):
+    """No price data for the requested ticker/date (holiday, weekend, or gap)."""
 
 
 def _truncate_to_minute(timestamp: str) -> str:
@@ -38,8 +43,14 @@ def _fetch_twelvedata(ticker: str, date: str, api_key: str) -> dict:
         "timezone": "UTC", "outputsize": 5000, "apikey": api_key,
     })
     time.sleep(8)  # throttle: free tier is 8 req/min
-    with urllib.request.urlopen(f"{_BASE}?{params}", timeout=30) as resp:
-        return json.loads(resp.read().decode())
+    try:
+        with urllib.request.urlopen(f"{_BASE}?{params}", timeout=30) as resp:
+            payload = json.loads(resp.read().decode())
+    except urllib.error.HTTPError as exc:
+        raise MarketDataUnavailable(f"{ticker} {date}: HTTP {exc.code}") from exc
+    if payload.get("status") != "ok":
+        raise MarketDataUnavailable(f"{ticker} {date}: {payload.get('message')}")
+    return payload
 
 
 def get_price(ticker: str, timestamp: str, provider: str = "stub") -> dict:

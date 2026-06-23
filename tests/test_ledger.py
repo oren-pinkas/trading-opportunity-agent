@@ -68,3 +68,35 @@ def test_build_simulation_block_uses_injected_prices():
     assert block["fills"][0]["actual_price"] == 100.0
     assert block["fills"][1]["actual_price"] == 90.0
     assert block["fills"][0]["source"] == "test:USO"
+
+
+from lib.ledger import simulate_dossier
+
+
+def test_simulate_dossier_writes_valid_simulated(tmp_path):
+    _seed(tmp_path, "x", _scheduled_fm("x", "2026-07-10T13:12:00Z"))
+    path = str(tmp_path / "x" / "dossier.md")
+    summary = simulate_dossier(path, "2026-07-11T00:00:00Z", provider="stub")
+    assert summary["id"] == "x"
+    assert summary["outcome"] in {"win", "loss", "neutral"}
+    fm, body = dossier.load(path)
+    assert fm["status"] == "simulated"
+    assert fm["simulation"]["ran_at"] == "2026-07-11T00:00:00Z"
+    assert dossier.validate_frontmatter(fm) == []     # conforms at new status
+    assert "Simulated" in body                        # narrative revision appended
+
+
+def test_simulate_dossier_handles_missing_data(tmp_path):
+    from lib.marketdata import MarketDataUnavailable
+    _seed(tmp_path, "h", _scheduled_fm("h", "2026-07-10T13:12:00Z"))
+    path = str(tmp_path / "h" / "dossier.md")
+
+    def no_data(ticker, ts, provider):
+        raise MarketDataUnavailable("no data for holiday")
+
+    summary = simulate_dossier(path, "2026-07-11T00:00:00Z", get_price=no_data)
+    assert summary["outcome"] == "neutral"
+    fm, body = dossier.load(path)
+    assert fm["status"] == "simulated"                # terminal, not retried forever
+    assert dossier.validate_frontmatter(fm) == []
+    assert "unavailable" in body.lower()

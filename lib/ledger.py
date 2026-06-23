@@ -71,3 +71,23 @@ def build_simulation_block(plan: dict, now: str, provider: str = "stub",
         "matched_hypothesis": matched_hypothesis(
             plan.get("expected_profit_pct", 0.0), pl["realized_profit_pct"]),
     }
+
+
+def simulate_dossier(path: str, now: str, provider: str = "stub",
+                     get_price=_marketdata.get_price) -> dict:
+    fm, _ = _dossier.load(path)
+    try:
+        block = build_simulation_block(fm["plan"], now, provider, get_price)
+        note = (f"Simulated {fm['plan']['ticker']} {fm['plan']['action']}: "
+                f"{block['realized_profit_pct']}% "
+                f"({block['outcome']}, matched={block['matched_hypothesis']})")
+    except (_marketdata.MarketDataUnavailable, KeyError) as exc:
+        block = {"ran_at": now, "fills": [], "realized_profit_pct": 0.0,
+                 "outcome": "neutral", "matched_hypothesis": "no",
+                 "note": f"market data unavailable: {exc}"}
+        note = f"Skipped {fm['plan']['ticker']}: market data unavailable ({exc})"
+    _dossier.append_revision(path, {"status": "simulated", "simulation": block},
+                             note, ts=now)
+    return {"id": fm.get("id"), "outcome": block["outcome"],
+            "realized_profit_pct": block["realized_profit_pct"],
+            "matched_hypothesis": block["matched_hypothesis"]}
