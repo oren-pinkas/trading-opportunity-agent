@@ -278,6 +278,21 @@ intraday included, **$0, no credit card**. Our access pattern is batch-and-histo
 - Granularity: **intraday minute/hourly** so plans can express "buy 13:00 → sell
   13:12 UTC".
 
+**Sufficiency for our needs (verified June 2026):**
+- *Granularity:* free tier provides **1-minute OHLC** for US equities (from
+  2020-02-10). Plans are minute-resolution, so this is an exact match. **Minute is the
+  resolution floor** — plans must not require sub-minute precision (no "13:12:30").
+- *Freshness:* free tier realtime is **15-min delayed**, but this is **irrelevant to
+  us** — the simulator runs at T+1 (18:30 ET, ~2.5h after close) and queries *settled
+  historical* bars, never live quotes.
+- *Invariant — simulate promptly:* free-tier intraday history retention is finite
+  (months, not years). The daily simulator cadence ensures every plan is priced while
+  still inside the retention window. Plans must **not** be left un-simulated for
+  months. The simulator should warn if a plan's exit time is older than the safe
+  retention horizon (treat ~30 days as a conservative bound; tune if needed).
+- *Out of scope (would require a paid feed):* sub-minute precision, and simulating a
+  fill live *during* the session.
+
 ## 8. Deferred / out of scope for v1
 
 - Real order execution — **never**; this is simulation only.
