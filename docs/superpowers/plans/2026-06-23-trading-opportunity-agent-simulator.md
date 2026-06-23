@@ -17,6 +17,7 @@
 - **Dossier statuses (ordered):** `scouted → researched → scheduled → simulated → analyzed`. The simulator consumes `scheduled` and produces `simulated`.
 - **Ledger root:** `opportunities/` (each opportunity is `opportunities/<id>/dossier.md`). All `lib/ledger.py` functions take a `base` parameter defaulting to `"opportunities"` so tests use `tmp_path`.
 - **Determinism rule for `matched_hypothesis`:** compare realized vs the plan's `expected_profit_pct` — `no` if realized ≤ 0; `yes` if realized ≥ 50% of expected; `partial` otherwise. (A deterministic baseline; later judgement stages may refine it.)
+- **No-data days (holidays/weekends):** a planned timestamp may fall on a US market holiday or weekend, for which the provider returns HTTP 400 / "no data" (verified live against Twelve Data: 2026-06-19 Juneteenth has no intraday data). The simulator must NOT crash the batch on this — it catches the gap, marks that one plan `neutral` with an explanatory note, and moves on. Other plans in the run are unaffected.
 
 ---
 
@@ -271,8 +272,10 @@ git commit -m "feat: add simulation block assembly with matched-hypothesis rule"
 - Test: `tests/test_ledger.py` (add cases)
 
 **Interfaces:**
-- Consumes: `lib.dossier.load`, `lib.dossier.append_revision`, `build_simulation_block`, `lib.dossier.validate_frontmatter`.
-- Produces: `simulate_dossier(path: str, now: str, provider: str = "stub", get_price=...) -> dict` — loads the dossier, builds the simulation block, appends a revision setting `status="simulated"` and the `simulation` block, and returns `{"id", "outcome", "realized_profit_pct", "matched_hypothesis"}`. The written dossier must pass `validate_frontmatter`.
+- Consumes: `lib.dossier.load`, `lib.dossier.append_revision`, `build_simulation_block`, `lib.dossier.validate_frontmatter`, `lib.marketdata.MarketDataUnavailable` (added in this task).
+- Produces:
+  - `lib.marketdata.MarketDataUnavailable` — exception raised when the provider has no data for a date (holiday/weekend/gap). `_fetch_twelvedata` raises it instead of leaking `urllib.error.HTTPError`.
+  - `simulate_dossier(path: str, now: str, provider: str = "stub", get_price=...) -> dict` — loads the dossier, builds the simulation block, appends a revision setting `status="simulated"` and the `simulation` block, returns `{"id", "outcome", "realized_profit_pct", "matched_hypothesis"}`. On a market-data gap (`MarketDataUnavailable` or a missing-minute `KeyError`) it writes a `neutral` block with an explanatory `note` instead of crashing. The written dossier must pass `validate_frontmatter` in both cases.
 
 - [ ] **Step 1: Write the failing test** — append to `tests/test_ledger.py`
 
@@ -291,6 +294,22 @@ def test_simulate_dossier_writes_valid_simulated(tmp_path):
     assert fm["simulation"]["ran_at"] == "2026-07-11T00:00:00Z"
     assert dossier.validate_frontmatter(fm) == []     # conforms at new status
     assert "Simulated" in body                        # narrative revision appended
+
+
+def test_simulate_dossier_handles_missing_data(tmp_path):
+    from lib.marketdata import MarketDataUnavailable
+    _seed(tmp_path, "h", _scheduled_fm("h", "2026-07-10T13:12:00Z"))
+    path = str(tmp_path / "h" / "dossier.md")
+
+    def no_data(ticker, ts, provider):
+        raise MarketDataUnavailable("no data for holiday")
+
+    summary = simulate_dossier(path, "2026-07-11T00:00:00Z", get_price=no_data)
+    assert summary["outcome"] == "neutral"
+    fm, body = dossier.load(path)
+    assert fm["status"] == "simulated"                # terminal, not retried forever
+    assert dossier.validate_frontmatter(fm) == []
+    assert "unavailable" in body.lower()
 ```
 
 - [ ] **Step 2: Run to verify failure**
@@ -298,16 +317,48 @@ def test_simulate_dossier_writes_valid_simulated(tmp_path):
 Run: `python3 -m pytest tests/test_ledger.py -k simulate_dossier -v`
 Expected: FAIL — `ImportError: cannot import name 'simulate_dossier'`.
 
-- [ ] **Step 3: Implement** — append to `lib/ledger.py`
+- [ ] **Step 3a: Harden `lib/marketdata.py`** — add the typed exception and convert provider 400s. Add `import urllib.error` to the imports, then add the class near the top:
+
+```python
+class MarketDataUnavailable(Exception):
+    """No price data for the requested ticker/date (holiday, weekend, or gap)."""
+```
+
+and replace the body of `_fetch_twelvedata`'s request with error conversion:
+
+```python
+def _fetch_twelvedata(ticker: str, date: str, api_key: str) -> dict:
+    params = urllib.parse.urlencode({
+        "symbol": ticker, "interval": "1min", "date": date,
+        "timezone": "UTC", "outputsize": 5000, "apikey": api_key,
+    })
+    time.sleep(8)  # throttle: free tier is 8 req/min
+    try:
+        with urllib.request.urlopen(f"{_BASE}?{params}", timeout=30) as resp:
+            payload = json.loads(resp.read().decode())
+    except urllib.error.HTTPError as exc:
+        raise MarketDataUnavailable(f"{ticker} {date}: HTTP {exc.code}") from exc
+    if payload.get("status") != "ok":
+        raise MarketDataUnavailable(f"{ticker} {date}: {payload.get('message')}")
+    return payload
+```
+
+- [ ] **Step 3b: Implement** — append to `lib/ledger.py`
 
 ```python
 def simulate_dossier(path: str, now: str, provider: str = "stub",
                      get_price=_marketdata.get_price) -> dict:
     fm, _ = _dossier.load(path)
-    block = build_simulation_block(fm["plan"], now, provider, get_price)
-    note = (f"Simulated {fm['plan']['ticker']} {fm['plan']['action']}: "
-            f"{block['realized_profit_pct']}% "
-            f"({block['outcome']}, matched={block['matched_hypothesis']})")
+    try:
+        block = build_simulation_block(fm["plan"], now, provider, get_price)
+        note = (f"Simulated {fm['plan']['ticker']} {fm['plan']['action']}: "
+                f"{block['realized_profit_pct']}% "
+                f"({block['outcome']}, matched={block['matched_hypothesis']})")
+    except (_marketdata.MarketDataUnavailable, KeyError) as exc:
+        block = {"ran_at": now, "fills": [], "realized_profit_pct": 0.0,
+                 "outcome": "neutral", "matched_hypothesis": "no",
+                 "note": f"market data unavailable: {exc}"}
+        note = f"Skipped {fm['plan']['ticker']}: market data unavailable ({exc})"
     _dossier.append_revision(path, {"status": "simulated", "simulation": block},
                              note, ts=now)
     return {"id": fm.get("id"), "outcome": block["outcome"],
@@ -318,13 +369,13 @@ def simulate_dossier(path: str, now: str, provider: str = "stub",
 - [ ] **Step 4: Run to verify pass**
 
 Run: `python3 -m pytest tests/test_ledger.py -v`
-Expected: PASS (6 passed).
+Expected: PASS (7 passed).
 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add lib/ledger.py tests/test_ledger.py
-git commit -m "feat: add simulate_dossier end-to-end write-back"
+git add lib/ledger.py lib/marketdata.py tests/test_ledger.py
+git commit -m "feat: add simulate_dossier with market-data gap handling"
 ```
 
 ---
@@ -385,7 +436,7 @@ def regenerate_index(base: str = LEDGER_DIR, out_path: str = "INDEX.md") -> str:
 - [ ] **Step 4: Run to verify pass**
 
 Run: `python3 -m pytest tests/test_ledger.py -v`
-Expected: PASS (7 passed).
+Expected: PASS (8 passed).
 
 - [ ] **Step 5: Commit**
 
