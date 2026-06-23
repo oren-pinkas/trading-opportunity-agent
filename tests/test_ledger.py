@@ -41,3 +41,30 @@ def test_find_simulatable_respects_exit_time(tmp_path):
 
 def test_missing_base_returns_empty():
     assert ledger.list_by_status("scheduled", base="/nonexistent/path") == []
+
+
+from lib.ledger import matched_hypothesis, build_simulation_block
+
+
+def test_matched_hypothesis_rule():
+    assert matched_hypothesis(2.0, -1.0) == "no"
+    assert matched_hypothesis(2.0, 1.5) == "yes"
+    assert matched_hypothesis(2.0, 0.5) == "partial"
+
+
+def test_build_simulation_block_uses_injected_prices():
+    plan = _scheduled_fm("x", "2026-07-10T13:12:00Z")["plan"]
+
+    def fake_price(ticker, ts, provider):
+        price = 100.0 if "13:00" in ts else 90.0   # short 100->90 = +10%
+        return {"price": price, "source": f"test:{ticker}", "fetched_at": ts}
+
+    block = build_simulation_block(plan, "2026-07-11T00:00:00Z",
+                                   get_price=fake_price)
+    assert block["realized_profit_pct"] == 10.0
+    assert block["outcome"] == "win"
+    assert block["matched_hypothesis"] == "yes"      # 10 >= 0.5*2.0
+    assert block["fills"][0]["leg"] == "entry"
+    assert block["fills"][0]["actual_price"] == 100.0
+    assert block["fills"][1]["actual_price"] == 90.0
+    assert block["fills"][0]["source"] == "test:USO"

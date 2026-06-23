@@ -36,3 +36,38 @@ def find_simulatable(now: str, base: str = LEDGER_DIR) -> list[dict]:
         if exit_time and _parse_iso(exit_time) <= now_dt:
             out.append(item)
     return out
+
+
+from lib import pnl as _pnl
+from lib import marketdata as _marketdata
+
+
+def matched_hypothesis(expected_pct: float, realized_pct: float) -> str:
+    if realized_pct <= 0:
+        return "no"
+    if realized_pct >= 0.5 * expected_pct:
+        return "yes"
+    return "partial"
+
+
+def build_simulation_block(plan: dict, now: str, provider: str = "stub",
+                           get_price=_marketdata.get_price) -> dict:
+    ticker = plan["ticker"]
+    entry = get_price(ticker, plan["entry"]["time"], provider)
+    exit_ = get_price(ticker, plan["exit"]["time"], provider)
+    pl = _pnl.compute_pnl(plan["action"], entry["price"], exit_["price"])
+    fills = [
+        {"leg": "entry", "planned_price": plan["entry"].get("target_price"),
+         "actual_price": entry["price"], "source": entry["source"],
+         "fetched_at": entry["fetched_at"]},
+        {"leg": "exit", "planned_price": plan["exit"].get("target_price"),
+         "actual_price": exit_["price"], "source": exit_["source"],
+         "fetched_at": exit_["fetched_at"]},
+    ]
+    return {
+        "ran_at": now, "fills": fills,
+        "realized_profit_pct": pl["realized_profit_pct"],
+        "outcome": pl["outcome"],
+        "matched_hypothesis": matched_hypothesis(
+            plan.get("expected_profit_pct", 0.0), pl["realized_profit_pct"]),
+    }
