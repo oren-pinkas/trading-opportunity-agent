@@ -1,13 +1,16 @@
 """Ledger navigation and deterministic simulation over the opportunities tree."""
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 
 from lib import dossier as _dossier
 
 LEDGER_DIR = "opportunities"
 
 
-def _parse_iso(ts: str) -> datetime:
+def _parse_iso(ts) -> datetime:
+    # Accept a str or a datetime (PyYAML parses unquoted ISO timestamps to datetime).
+    if isinstance(ts, datetime):
+        return ts if ts.tzinfo else ts.replace(tzinfo=timezone.utc)
     return datetime.fromisoformat(ts.replace("Z", "+00:00"))
 
 

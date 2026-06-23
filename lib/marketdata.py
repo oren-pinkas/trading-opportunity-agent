@@ -6,6 +6,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from datetime import datetime, timezone
 
 _CACHE: dict[tuple[str, str], dict] = {}
 _BASE = "https://api.twelvedata.com/time_series"
@@ -15,8 +16,12 @@ class MarketDataUnavailable(Exception):
     """No price data for the requested ticker/date (holiday, weekend, or gap)."""
 
 
-def _truncate_to_minute(timestamp: str) -> str:
-    # "2026-07-10T13:00:45Z" -> "2026-07-10T13:00Z"
+def _truncate_to_minute(timestamp) -> str:
+    # Accept a str ("2026-07-10T13:00:45Z") or a datetime (PyYAML parses unquoted
+    # ISO timestamps into datetime objects). Always return "YYYY-MM-DDTHH:MMZ".
+    if isinstance(timestamp, datetime):
+        dt = timestamp if timestamp.tzinfo else timestamp.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
     base = timestamp.replace("Z", "")
     return base[:16] + "Z"
 

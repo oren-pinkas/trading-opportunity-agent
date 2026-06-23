@@ -102,6 +102,37 @@ def test_simulate_dossier_handles_missing_data(tmp_path):
     assert "unavailable" in body.lower()
 
 
+def test_simulate_dossier_from_unquoted_yaml_timestamps(tmp_path):
+    # PyYAML parses unquoted ISO timestamps into datetime objects; the simulator
+    # must handle that, not just the string timestamps a Python dict fixture yields.
+    d = tmp_path / "u"; d.mkdir()
+    path = str(d / "dossier.md")
+    (d / "dossier.md").write_text(
+        "---\n"
+        "id: u\n"
+        "title: t\n"
+        "status: scheduled\n"
+        "created: 2026-06-22T09:00:00Z\n"
+        "event: {type: geopolitical, summary: s, impact_window: 2026-06-22}\n"
+        "tickers: [USO]\n"
+        "sources: [{title: a, url: u, accessed_at: x}]\n"
+        "hypothesis: {statement: h, direction: short, confidence: 65}\n"
+        "plan:\n"
+        "  ticker: USO\n"
+        "  action: short\n"
+        "  entry: {time: 2026-06-22T14:00:00Z, target_price: 78.5}\n"
+        "  exit: {time: 2026-06-22T15:30:00Z, target_price: 78.1}\n"
+        "  expected_profit_pct: 0.5\n"
+        "research: {strategy: three-round-panel, models: {bull: sonnet}, last_updated: 2026-06-22T11:00:00Z}\n"
+        "---\n\n## Seed\n"
+    )
+    summary = ledger.simulate_dossier(path, "2026-06-23T00:00:00Z", provider="stub")
+    assert summary["outcome"] in {"win", "loss", "neutral"}
+    fm, _ = dossier.load(path)
+    assert fm["status"] == "simulated"
+    assert dossier.validate_frontmatter(fm) == []
+
+
 from lib.ledger import regenerate_index
 
 
