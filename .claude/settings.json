@@ -20,10 +20,12 @@
       "Bash(mkdir:*)",
       "Bash(cat:*)",
       "Bash(ls:*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git config:*)"
     ],
     "deny": [
-      "Bash(git push:*)",
       "Bash(rm:*)",
       "Bash(curl:*)",
       "Read(./.env)"
