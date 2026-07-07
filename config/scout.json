@@ -1,5 +1,6 @@
 {
   "model": "haiku",
   "source_hints": [],
-  "dedupe_window_days": 14
+  "dedupe_window_days": 3,
+  "target_opportunities_per_run": 10
 }
