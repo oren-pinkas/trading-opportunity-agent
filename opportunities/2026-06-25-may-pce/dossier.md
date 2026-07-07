@@ -1,7 +1,7 @@
 ---
 id: 2026-06-25-may-pce
 title: May PCE print → rate-sensitive assets
-status: scheduled
+status: simulated
 created: '2026-06-23T11:00:00Z'
 event:
   type: economic
@@ -43,6 +43,22 @@ research:
     conditionally after a hot >=0.4% MoM print confirms; recorded plan is unconditional,
     so an in-line print should produce ~flat/negative and vindicate the caution.'
   last_updated: '2026-06-23T11:10:00Z'
+simulation:
+  ran_at: '2026-06-25T22:30:05Z'
+  fills:
+  - leg: entry
+    planned_price: 85.8
+    actual_price: 87.575
+    source: https://api.twelvedata.com/time_series?symbol=TLT&interval=1min&date=2026-06-25&timezone=UTC
+    fetched_at: 2026-06-25T13:35Z
+  - leg: exit
+    planned_price: 84.9
+    actual_price: 87.3742
+    source: https://api.twelvedata.com/time_series?symbol=TLT&interval=1min&date=2026-06-25&timezone=UTC
+    fetched_at: 2026-06-25T19:00Z
+  realized_profit_pct: 0.2293
+  outcome: win
+  matched_hypothesis: partial
 ---
 
 ## Scouted 2026-06-23T11:00:00Z
@@ -50,3 +66,7 @@ research:
 ---
 ### Revision 2026-06-23T11:10:00Z
 Research debate (three-round-panel): low-confidence small short TLT; EV +0.25%, tail-dependent.
+
+---
+### Revision 2026-06-25T22:30:05Z
+Simulated TLT short: 0.2293% (win, matched=partial)

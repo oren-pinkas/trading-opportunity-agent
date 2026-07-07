@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+cd "/Users/oren/Oren/lab/trading-oppurtonity-agent" && exec python3 -m lib.cli "$@"

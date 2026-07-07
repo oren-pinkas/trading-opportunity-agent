@@ -1,0 +1,14 @@
+# Lessons
+
+> ⚠️ PAPER-TRADING SIMULATION ONLY. NOT FINANCIAL ADVICE.
+
+- [earnings | NKE] Confidence <=~45 with an un-hedgeable positive tail and net EV <~2% against a ~7-8x adverse-tail-to-edge ratio is a no-trade filter, not a size-down; express such earnings gap-shorts via defined-risk options, never a naked short.
+- [earnings | NKE] Discount post-earnings negative base rates when the name is already at/near its 52-week low: most of the drawdown is priced in and a benign or one-time-beat print flips the reaction positive.
+- [economic | XLI,SPY] Anchor entry to a live pre-event quote, not the research-day price; if the live price has drifted >~0.5-1% from the plan anchor, re-derive targets/EV or void the trade rather than filling blind.
+- [economic | XLI,SPY] When the thesis is 'catalyst reprices X higher' and X has already rallied to its 52-week high before the event, treat the move as priced-in: fade or shrink, don't chase the entry.
+- [economic | SPY,TLT] Skip trades whose only positive-EV path is a pre-market conditional entry the harness cannot fill; if the executable cash-open leg's EV is ~0 (here ~+0.13%), don't record the trade.
+- [economic | SPY,TLT] After a known regime shift (e.g. a Fed dot-flip), require a differentiated surprise vs consensus before shorting duration into a data print: an in-line print is already in the curve and gets faded by duration buyers.
+- [earnings | TSLA] Set intraday exits at least one minute inside the session boundary (19:59:00Z / 15:59 ET, not 20:00:00Z): a 1-minute-bar provider has no bar stamped exactly at the close, so the leg silently no-fills and voids the whole trade.
+- [earnings | TSLA] Add a pre-simulation timestamp guard that validates both legs map to available US-equity bars (13:30Z-19:59Z) and snaps to the nearest valid bar instead of voiding an untested thesis to NEUTRAL.
+- [ipo | LIME] For IPO plans, don't hard-code entry to the raw listing-day open minute: day-one minute-bar coverage is unreliable; delay entry to a liquid window (30-60min after first print) or probe for a fillable bar before scheduling both legs.
+- [ipo | LIME] Never convert an imprecise listing window ('late June/early July') into a single exact timestamp; gate IPO opportunities on a confirmed exchange listing date/time verified present in the price provider.
