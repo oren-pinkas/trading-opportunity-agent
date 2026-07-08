@@ -34,8 +34,8 @@ while IFS= read -r id; do
   if [ "$MAX" -gt 0 ] && [ "$n" -gt "$MAX" ]; then n=$((n-1)); break; fi
   NOW="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
   {
-    echo "=== research-each ${id} ${NOW} ==="
-    claude -p "Use the research-debate skill for EXACTLY ONE opportunity: ${id}. Do NOT run any discovery step (skip 'toa ls --status scouted'); process ONLY '${id}'. Do not read, load, reference, or compare against any other opportunity's dossier — form the hypothesis for '${id}' on its own merits alone, so judgment is never polluted by other data points. The current UTC time is ${NOW}. Today's date is ${NOW%%T*}."
+    echo "=== research-each ${id} (model=sonnet) ${NOW} ==="
+    claude -p --model sonnet "Use the research-debate skill for EXACTLY ONE opportunity: ${id}. Do NOT run any discovery step (skip 'toa ls --status scouted'); process ONLY '${id}'. Do not read, load, reference, or compare against any other opportunity's dossier — form the hypothesis for '${id}' on its own merits alone, so judgment is never polluted by other data points. The current UTC time is ${NOW}. Today's date is ${NOW%%T*}."
     echo "=== done ${id} (exit $?) ${NOW} ==="
   } >> "$LOG" 2>&1
 done <<< "$IDS"

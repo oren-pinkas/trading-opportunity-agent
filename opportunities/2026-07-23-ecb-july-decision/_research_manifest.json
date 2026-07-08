@@ -1,0 +1,26 @@
+{
+  "last_updated": "2026-07-08T06:30:05Z",
+  "models": {"bull": "sonnet", "bear": "sonnet", "quant": "opus", "synthesizer": "opus"},
+  "personas": ["bull", "bear", "quant"],
+  "strategy": "three-round-panel",
+  "opportunities": [
+    {
+      "id": "2026-07-23-ecb-july-decision",
+      "hypothesis": {
+        "statement": "A well-telegraphed, non-projection ECB hold on 2026-07-23 offers no executable directional edge in FXE. The market-moving surprise was the June 25bp hike; July's only live variable is Lagarde's tone, which is pre-discounted via public speaker commentary and already faded in spot (1.1423 on Jul 7). Expected signed EV is negative net of ~0.08% round-trip friction, and the one real quantity (event vol) is not expressible because options do not fill.",
+        "direction": "none",
+        "confidence": 80
+      },
+      "plan": {
+        "ticker": "FXE",
+        "action": "no-trade",
+        "entry": null,
+        "exit": null,
+        "expected_profit_pct": 0.0,
+        "rationale": "Thin, two-sided, telegraphed catalyst on a non-projection meeting; negative EV net of costs; confounded by the Fed decision six days later (2026-07-29). Quant EV -0.07% to -0.08%; bear structural NO-TRADE; bull conceded to 48/100 and agreed a no-trade is defensible."
+      },
+      "dissent": "Bull's payoff-skew thesis: if the dovish hold is genuinely pre-discounted (small capped downside) while any hawkish tilt is unpriced (fatter upside), a directional FXE long harvests the tail for ~+0.09% net. Rejected on magnitude (the hawkish +0.55% branch is a ~4-5% tail on the measured FXE distribution, not the 45% the bull assumed) and on fragility (dies on any pre-meeting 'we're done' signal, the modal path). It is the single live path to a trade and the thread the post-mortem should pull if FXE prints a material hawkish move on Jul 23.",
+        "body_note": "Three-round panel (bull/bear/quant) converged on NO-TRADE from two independent directions. Quant: measured FXE daily moves ~0.15-0.30% normal, -0.58% on the June ECB decision day; scenario-weighted absolute move ~0.35% but options-only; no sign edge -> signed EV ~0, minus ~0.08% friction = -0.08% (bull's skew variant included, ~-0.07%). Bear: repricing done in June, Jul 23 is a non-projection telegraphed hold, tone pre-priced, spot already faded to 1.1423, Fed Jul 29 confounds. Bull mounted a payoff-skew defense (dovish priced / hawkish unpriced) netting ~+0.09%, then conceded it is astride the friction line and dies on any 'we're done' signal, dropping to 48/100. No fillable instrument for the only real edge (event vol). Reconsideration triggers before Jul 23: (1) lopsided >85% dovish-hold consensus -> contrarian long on any hawkish tone; (2) fresh unpriced hard-data shock; (3) July hike-probability >~20% priced -> skew flattens, stand down. Confidence in NO-TRADE: 80/100. Anchor FXE 370.38 @ 2026-07-07T19:59Z (sim provider)."
+    }
+  ]
+}

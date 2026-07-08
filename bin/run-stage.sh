@@ -10,6 +10,12 @@ STAGE="${1:?usage: run-stage.sh <skill-name>}"
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT"
 
+# Model per stage. Bare `claude -p` defaults to the session model (Opus) — far too
+# expensive. Sonnet is ~4-5x cheaper than Opus and reliably drives the multi-step
+# tool workflows here. (Haiku was tried for scout but aborted mid-chain on the
+# 10-step search→dedup→record loop — too weak for the orchestration.)
+MODEL="sonnet"
+
 # `toa` on PATH collides with an unrelated asdf 'foreman' CLI; route it to the
 # project's own CLI so every stage's `toa ...` calls hit the right tool.
 mkdir -p "$REPO_ROOT/ops/shims"
@@ -29,8 +35,8 @@ NOW="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 # Headless, non-interactive. Tool permissions come from the repo's scoped allowlist
 # in .claude/settings.json — NOT a global permission bypass.
 {
-  echo "=== run-stage ${STAGE} ${NOW} ==="
-  claude -p "Use the ${STAGE} skill. The current UTC time is ${NOW}. Today's date is ${NOW%%T*}."
+  echo "=== run-stage ${STAGE} (model=${MODEL}) ${NOW} ==="
+  claude -p --model "$MODEL" "Use the ${STAGE} skill. The current UTC time is ${NOW}. Today's date is ${NOW%%T*}."
   echo "=== done ${STAGE} (exit $?) ${NOW} ==="
 } >> "$LOG" 2>&1
 
