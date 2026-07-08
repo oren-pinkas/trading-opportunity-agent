@@ -1,7 +1,7 @@
 ---
 id: 2026-07-22-servicenow-q2-fy26
 title: ServiceNow Q2 FY26 earnings
-status: scouted
+status: researched
 created: '2026-07-07T22:42:46Z'
 event:
   type: earnings
@@ -14,6 +14,46 @@ sources:
 - title: ServiceNow newsroom
   url: https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-to-Announce-Second-Quarter-2026-Financial-Results-on-July-22/default.aspx
   accessed_at: '2026-07-07T22:42:46Z'
+hypothesis:
+  statement: ServiceNow Q2 FY26 is fundamentally a mild beat-and-raise setup (AI-monetization
+    ramp via Now Assist, habitual conservative cRPO guide-then-beat), but the catalyst
+    resolves overnight after the 07-22 close and the simulator's NOW price series
+    is deterministic noise, so no compliant, scoreable trade exists.
+  direction: long
+  confidence: 84
+plan:
+  ticker: NOW
+  action: no-trade
+  rationale: 'Two independent sufficient reasons: (1) the catalyst is overnight-only,
+    so the only outcome-resolving position is a naked equity hold through an un-hedgeable
+    gap (banned by lesson 1; options do not fill), while every fillable intraday-only
+    shape is negative net-EV after ~25bps slippage with no edge over the print; (2)
+    the sim NOW price series is deterministic noise (07-22 317->275->111; 07-23 286->99->76
+    vs 280.42 anchor), making P/L an unscoreable stub artifact for which NO-TRADE
+    is stochastically dominant.'
+research:
+  strategy: three-round-panel
+  personas:
+  - bull
+  - bear
+  - quant
+  models:
+    bull: sonnet
+    bear: sonnet
+    quant: opus
+    synthesizer: opus
+  dissent: 'Unanimous on NO-TRADE; the unresolved disagreement is why, not whether.
+    The bear holds NO-TRADE stands even on a clean price tape (overnight-only non-executability
+    + negative intraday EV + fundamental caution: raised bar, disintermediation history,
+    ~82% vol). The bull holds that on a coherent tape the contingent gap-up-confirmed
+    07-23 single-session momentum long would be a live, positive-EV trade, and only
+    the noise substrate forces standing aside. Untestable here; decisive for any future
+    NOW event whose catalyst lands inside a regular session on coherent bars.'
+  last_updated: '2026-07-08T01:58:12Z'
 ---
 
 ## Scouted 2026-07-07T22:42:46Z
+
+## Researched 2026-07-08T01:58:12Z — NO-TRADE
+
+Unanimous NO-TRADE across bull/bear/quant. Event catalyst (Q2 FY26 AI-monetization / cRPO print) lands after the 2026-07-22 close, so it resolves via an overnight gap that the simulator cannot fill; options do not fill and naked overnight equity is banned by institutional lesson 1. The quant additionally probed the actual sim price series and found it is deterministic noise (intraday swings of -65% to -73% with no news vs a ~280.42 anchor), making any simulated P/L unscoreable and NO-TRADE stochastically dominant. The bull's contingent gap-up-confirmed 07-23 momentum long was defeated because its entry gate and exit fill read the same corrupted series. Latent directional lean is mildly constructive (long) on fundamentals, but no compliant, scoreable instrument exists to express it.

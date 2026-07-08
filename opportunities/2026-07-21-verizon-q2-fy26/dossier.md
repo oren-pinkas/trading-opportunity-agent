@@ -1,7 +1,7 @@
 ---
 id: 2026-07-21-verizon-q2-fy26
 title: Verizon Q2 FY26 earnings
-status: scouted
+status: researched
 created: '2026-07-07T20:34:02Z'
 event:
   type: earnings
@@ -14,6 +14,54 @@ sources:
 - title: Verizon to report earnings July 24, 2026
   url: https://www.verizon.com/about/news/verizon-to-report-earnings-july-24-2026
   accessed_at: '2026-07-07T20:34:02Z'
+hypothesis:
+  statement: 'Verizon''s Q2 FY26 print (confirmed 2026-07-24, not the dossier''s 07-21
+    tag) is a modestly bullish turnaround-confirmation catalyst on the fundamentals
+    (Q1 delivered +55K postpaid phone net adds — first positive Q1 in 13 years — churn
+    <0.85% exiting March, and FY26 FCF guided +7% to ~$21.5B against a ~58% dividend
+    payout). But there is no scoreable edge: the earnings reaction is a ~3.5% roughly
+    symmetric coin flip that is un-hedgeable in an equity-only sim, the dossier date
+    is 3 days early, and the price stub is arbitrary per-timestamp noise (07-24: 439.32->493.46->146.84)
+    uncorrelated with any thesis, so no genuine directional read maps to a repeatable
+    simulated outcome. NO-TRADE.'
+  direction: none
+  confidence: 20
+plan:
+  ticker: VZ
+  action: no-trade
+  entry:
+    time: null
+    target_price: null
+  exit:
+    time: null
+    target_price: null
+  expected_profit_pct: 0
+research:
+  strategy: three-round-panel
+  personas:
+  - bull
+  - bear
+  - quant
+  models:
+    bull: sonnet
+    bear: sonnet
+    quant: opus
+    synthesizer: opus
+  dissent: 'Whether to exploit the deterministic stub. The quant''s Framing B and
+    the bull''s re-stamp both show a mechanically ''guaranteed'' +12.29% long is available
+    IF timestamp foreknowledge of the deterministic stub is legitimate: buy 2026-07-24T13:30:00Z
+    @439.32, exit 2026-07-24T16:00:00Z @493.46. The panel declined it as curve-fitting
+    noise, but if the simulator scores against exactly these deterministic values,
+    a sim-gaming long is the EV-maximizing action and NO-TRADE leaves a knowable +12%
+    on the table. Unresolved pending a fix to the price source (a coherent VZ price
+    path). Secondary: the bull''s fundamental long (~55-60 conviction) vs. the bear''s
+    raised-bar / sell-the-news caution would be the real debate if the instrument
+    worked.'
+  last_updated: '2026-07-08T01:48:47Z'
 ---
 
 ## Scouted 2026-07-07T20:34:02Z
+
+## Researched 2026-07-08T01:48:47Z — NO-TRADE
+
+Three-round panel (bull/bear/quant) converged on NO-TRADE. Real-world fundamentals lean mildly long into a durable-turnaround confirmation, but no repeatable, hedge-able, correctly-dated, thesis-linked edge is scoreable here. Orchestrator verified two defects: (1) the report date is 2026-07-24, not the dossier's 07-21 window (source: verizon.com/about/news/verizon-to-report-earnings-july-24-2026); (2) the price stub returns arbitrary per-timestamp noise (07-24 13:30Z=439.32, 16:00Z=493.46, 19:58Z=146.84), decoupling simulated P/L from any thesis and falsifying the quant's initial 'both legs fill at 457.22' premise. Bull dropped 60->38 (conceding profit would be a stub artifact), bear 82->90, quant NO-TRADE 80 (edge 5). Full debate in transcript.md.

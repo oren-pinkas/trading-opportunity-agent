@@ -1,0 +1,25 @@
+{
+  "last_updated": "2026-07-08T02:18:15Z",
+  "models": {"bull": "sonnet", "bear": "sonnet", "quant": "opus", "synthesizer": "opus"},
+  "personas": ["bull", "bear", "quant"],
+  "strategy": "three-round-panel",
+  "opportunities": [
+    {
+      "id": "2026-07-22-texas-instruments-q2-fy26",
+      "hypothesis": {
+        "statement": "TXN Q2 FY26 (print after close 2026-07-22, reaction 2026-07-23) offers no positive-expectancy trade under the sim's equity-only / no-overnight / no-options constraints. The tradable edge is the ~6.4% avg-abs overnight earnings gap, which cannot be held; the intraday-only expression (enter 13:31Z after the gap, exit before close) is a fresh ~coin-flip with EV ~0 after slippage. Residual directional lean is mildly short on stretched valuation (+70% YTD, ~49-50x trailing P/E, 70% historical down-reaction base rate), but not enough to overcome zero net EV. Stand aside.",
+        "direction": "short",
+        "confidence": 30
+      },
+      "plan": {
+        "ticker": "TXN",
+        "action": "no-trade",
+        "entry": {"time": null, "target_price": null},
+        "exit": {"time": null, "target_price": null},
+        "expected_profit_pct": 0
+      },
+      "dissent": "Bull: the long edge is genuinely real but lives entirely in the un-holdable overnight gap; if the environment permitted holding the gap (or defined-risk options), the ~6.4% avg-move base rate flips EV clearly positive and this becomes a conviction long. The only reason to pass is a structural execution constraint, not the thesis. Secondary unresolved: the ~16% price-feed discrepancy (sim stub 340.26 vs real Twelvedata ~292.75) — at the real fill (~293, below Street mean PT and ~12% below the 52wk high) the 'priced for perfection' bear case is materially weaker than the panel's ATH framing assumed, though it does not create an intraday edge.",
+        "body_note": "Convergent NO-TRADE after three rounds. All three personas independently or ultimately landed on stand-aside.\n\n**Round 1.** Bull proposed a conditional intraday long (PEAD/momentum ride, entry 2026-07-23T13:31:00Z, exit 19:59:00Z, +2.5% target, conf 58), arguing entry after the gap sidesteps the un-hedgeable overnight tail. Bear: NO-TRADE, mild short bias (conf 40) — TXN priced for perfection (+70% YTD, above mean analyst PT ~$294-298, ~49-50x P/E), classic sell-the-news setup; short is the deadlier tail (last reaction +19.4% up-gap). Quant: NO-TRADE (conf 72) — base rates 30% up / 70% down (Trefis, 20 events); naked-long EV -0.6% to +0.1%; adverse-tail-to-edge ~60-75x, far above the 7-8x no-trade red line.\n\n**Round 2.** Bull conceded: the tradable edge lives in the overnight gap the sim forbids holding; the intraday-only equity leg is ~zero-EV after slippage (conf in a profitable long dropped 58->40). Quant priced the intraday-only variant explicitly: P(continue)=0.54, +/-2.0%, slippage 0.15% -> EV +0.01% (~zero); a 1.2% stop sits inside the T+1 post-print 3-5% ATR and gets whipsawed, so the 2:1 stop framing fails too (NO-TRADE, conf 70). Bear granted the intraday structure removes the gap tail but not the zero-expectancy problem; short is the same coin-flip mirrored (NO-TRADE, conf 63).\n\n**Convergence.** The panel correctly relocated the objection from 'un-hedgeable tail' to 'no edge that survives costs.' Both are fatal under equity-only execution. The 52wk-low base-rate-discount lesson is inverted here (TXN near highs, not lows) and offers no support for a long. No positive-EV leg exists in either direction.\n\nExecution/data caveats logged: (1) intraday exits must be <=19:59:00Z to map to a real bar; (2) unresolved ~16% discrepancy between the sim stub anchor (340.26) and the real Twelvedata price (~292.75) for 2026-07-07T19:59Z — dollar P&L and share count depend on the real fill, though percentage EV (the basis for this NO-TRADE) is scale-invariant and unaffected."
+    }
+  ]
+}
