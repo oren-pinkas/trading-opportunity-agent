@@ -1,7 +1,7 @@
 ---
 id: 2026-06-26-delta-q2-fy26
 title: Delta Air Lines Q2 FY2026 earnings (report July 10 BMO)
-status: scheduled
+status: simulated
 created: '2026-06-26T11:00:05Z'
 event:
   type: earnings
@@ -56,15 +56,31 @@ research:
     bear: sonnet
     quant: opus
     synthesizer: opus
-  dissent: "The bear's strongest unrebutted point: the fuel tailwind the bull/quant
-    treat as a fresh catalyst already drove DAL's ~40% 90-day run to a 52-wk high
-    ABOVE the Street mean target (~$82). If the windfall is already in the price, it
-    cannot also be the gap catalyst, leaving a coin-flip that is negative-EV after
-    an overnight levered hold's costs. Quant concurs the long is only positive if
+  dissent: 'The bear''s strongest unrebutted point: the fuel tailwind the bull/quant
+    treat as a fresh catalyst already drove DAL''s ~40% 90-day run to a 52-wk high
+    ABOVE the Street mean target (~$82). If the windfall is already in the price,
+    it cannot also be the gap catalyst, leaving a coin-flip that is negative-EV after
+    an overnight levered hold''s costs. Quant concurs the long is only positive if
     P(up) > ~0.54 and pays only ~+0.5% net even then. Post-mortem must test whether
     the realized gap tracks the magnitude of the pre-print run-up (priced-in) vs the
-    fuel-vs-guidance delta (not-priced-in)."
+    fuel-vs-guidance delta (not-priced-in).'
   last_updated: '2026-06-26T12:10:39Z'
+simulation:
+  ran_at: '2026-07-10T22:46:36Z'
+  fills:
+  - leg: entry
+    planned_price: 91.5
+    actual_price: 88.77
+    source: https://api.twelvedata.com/time_series?symbol=DAL&interval=1min&date=2026-07-09&timezone=UTC
+    fetched_at: 2026-07-09T19:50Z
+  - leg: exit
+    planned_price: 94.7
+    actual_price: 86.5501
+    source: https://api.twelvedata.com/time_series?symbol=DAL&interval=1min&date=2026-07-10&timezone=UTC
+    fetched_at: 2026-07-10T13:45Z
+  realized_profit_pct: -2.5007
+  outcome: loss
+  matched_hypothesis: 'no'
 ---
 
 ## Scouted 2026-06-26T11:00:05Z
@@ -85,3 +101,7 @@ EV (long only positive if P(up) > ~0.54; ~+0.5% net even at 0.60) but conceded t
 only defensible DIRECTION is long. Synthesizer converged on a quarter-size LONG,
 +3.5% target inside the ~5.7% implied / ~3.5% realized move, confidence 56. Full
 debate with citations in `transcript.md`.
+
+---
+### Revision 2026-07-10T22:46:36Z
+Simulated DAL buy: -2.5007% (loss, matched=no)

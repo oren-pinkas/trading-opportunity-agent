@@ -1,7 +1,7 @@
 ---
 id: 2026-07-02-levi-q2-fy26
 title: Levi Strauss Q2 FY2026 earnings (press release July 8 AMC)
-status: scheduled
+status: simulated
 created: '2026-07-02T11:00:05Z'
 event:
   type: earnings
@@ -25,12 +25,12 @@ sources:
   url: https://www.businesswire.com/news/home/20260407430551/en/Levi-Strauss-Co.-Announces-That-After-a-Planned-Transition-Chief-Financial--Growth-Officer-Harmit-Singh-Will-Retire
   accessed_at: '2026-06-25T12:00:00Z'
 hypothesis:
-  statement: 'PANEL IS GENUINELY SPLIT WITH NO DIRECTIONAL CONSENSUS — the quant
-    (tiebreaker) finds no directional edge. Recorded as a minimal LONG expression
-    reflecting the slight probability tilt (~52/48) from a beat-and-raise momentum
-    name (beats 5 of 6 quarters, DTC >50% mix). Entry before the 7/8 AMC print, exit
-    after the 7/9 open gap. The compressed implied move (~5%) is a volatility signal,
-    not a direction signal. Direction: long, very low conviction.'
+  statement: 'PANEL IS GENUINELY SPLIT WITH NO DIRECTIONAL CONSENSUS — the quant (tiebreaker)
+    finds no directional edge. Recorded as a minimal LONG expression reflecting the
+    slight probability tilt (~52/48) from a beat-and-raise momentum name (beats 5
+    of 6 quarters, DTC >50% mix). Entry before the 7/8 AMC print, exit after the 7/9
+    open gap. The compressed implied move (~5%) is a volatility signal, not a direction
+    signal. Direction: long, very low conviction.'
   direction: long
   confidence: 35
 plan:
@@ -57,13 +57,29 @@ research:
   dissent: 'No directional consensus. Quant (opus, tiebreaker): directional net EV
     ~0 to -0.4% after costs — compressed implied move (~5%, consistent with 4.89%
     recent realized) argues for a long-gamma/straddle structure (out of scope), NOT
-    a directional bet; would pass. Bear (conf 38): SHORT — priced for perfection
-    within ~5% of the 52-wk high ($24.82), elevated bar on every metric, CFO Harmit
-    Singh retiring (transition by Nov 2026), unquantified Bangladesh tariff (~29%)
-    risk to H2 margins; down-gaps from a high base tend to be larger. Bull (conf 48):
-    LONG — beat-and-raise momentum, DTC mix-shift, tariffs pre-guided. The down-
-    magnitude skew the bear cites partly offsets the long probability tilt.'
+    a directional bet; would pass. Bear (conf 38): SHORT — priced for perfection within
+    ~5% of the 52-wk high ($24.82), elevated bar on every metric, CFO Harmit Singh
+    retiring (transition by Nov 2026), unquantified Bangladesh tariff (~29%) risk
+    to H2 margins; down-gaps from a high base tend to be larger. Bull (conf 48): LONG
+    — beat-and-raise momentum, DTC mix-shift, tariffs pre-guided. The down- magnitude
+    skew the bear cites partly offsets the long probability tilt.'
   last_updated: '2026-06-25T12:10:00Z'
+simulation:
+  ran_at: '2026-07-10T22:46:36Z'
+  fills:
+  - leg: entry
+    planned_price: 23.5
+    actual_price: 24.41
+    source: https://api.twelvedata.com/time_series?symbol=LEVI&interval=1min&date=2026-07-08&timezone=UTC
+    fetched_at: 2026-07-08T19:50Z
+  - leg: exit
+    planned_price: 23.65
+    actual_price: 23.955
+    source: https://api.twelvedata.com/time_series?symbol=LEVI&interval=1min&date=2026-07-09&timezone=UTC
+    fetched_at: 2026-07-09T13:45Z
+  realized_profit_pct: -1.864
+  outcome: loss
+  matched_hypothesis: 'no'
 ---
 
 ## Scouted 2026-07-02T11:00:05Z
@@ -78,3 +94,7 @@ closure). Real price ~$23.4-23.6 (NOT the stub's $488). The panel split with no
 directional consensus; the quant found no directional edge (compressed IV is a vol, not
 direction, signal). Recorded as a minimal LONG at confidence 35 for the learning loop.
 Full debate with citations in `transcript.md`.
+
+---
+### Revision 2026-07-10T22:46:36Z
+Simulated LEVI buy: -1.864% (loss, matched=no)
