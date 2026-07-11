@@ -31,7 +31,7 @@
 | 2026-07-07-usmca-review-autos | USMCA July 2026 review — autos exposure | researched | — |
 | 2026-07-08-bending-spoons-ipo | Bending Spoons IPO debut (prices ~Jun 30, lists Jul 1 as BSP) | researched | — |
 | 2026-07-08-boj-july-policy-meeting | Bank of Japan July policy meeting | researched | — |
-| 2026-07-08-caesars-icahn-fertitta-bidding-war | Caesars go-shop deadline amid Icahn rival bid to Fertitta's $17.6B deal | scheduled | — |
+| 2026-07-08-caesars-icahn-fertitta-bidding-war | Caesars go-shop deadline amid Icahn rival bid to Fertitta's $17.6B deal | simulated | neutral |
 | 2026-07-08-chemomab-scipher-merger | Chemomab to merge with Scipher Medicine (SCIP) | scouted | — |
 | 2026-07-08-china-q2-gdp | China Q2 2026 GDP release | scouted | — |
 | 2026-07-08-ferrari-q2-earnings | Ferrari Q2 2026 earnings | researched | — |
