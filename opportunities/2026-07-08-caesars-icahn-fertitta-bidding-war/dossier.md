@@ -1,7 +1,7 @@
 ---
 id: 2026-07-08-caesars-icahn-fertitta-bidding-war
 title: Caesars go-shop deadline amid Icahn rival bid to Fertitta's $17.6B deal
-status: simulated
+status: analyzed
 created: '2026-07-08T17:21:22Z'
 event:
   type: regulatory
@@ -50,6 +50,16 @@ simulation:
   outcome: neutral
   matched_hypothesis: 'no'
   note: 'market data unavailable: CZR 2026-07-11: HTTP 400'
+postmortem:
+  ran_at: '2026-07-12T23:30:05Z'
+  root_cause: wrong-assumption
+  lessons:
+  - Before finalizing any plan, validate that every entry and exit timestamp falls
+    within an open trading session (not a weekend or exchange holiday) for the specific
+    instrument, and roll non-trading exit dates forward to the next open session.
+  - Never map a corporate/legal calendar date (go-shop, earnings, deal deadlines)
+    directly onto an execution timestamp — treat such dates as catalysts and derive
+    the fill time from the nearest valid trading session.
 ---
 
 ## Scouted 2026-07-08T17:21:22Z
@@ -66,3 +76,7 @@ Kelly-near-zero finding.
 ---
 ### Revision 2026-07-11T22:34:53Z
 Skipped CZR: market data unavailable (CZR 2026-07-11: HTTP 400)
+
+---
+### Revision 2026-07-12T23:30:05Z
+Post-mortem: wrong-assumption

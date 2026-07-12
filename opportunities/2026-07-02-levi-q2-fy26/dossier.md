@@ -1,7 +1,7 @@
 ---
 id: 2026-07-02-levi-q2-fy26
 title: Levi Strauss Q2 FY2026 earnings (press release July 8 AMC)
-status: simulated
+status: analyzed
 created: '2026-07-02T11:00:05Z'
 event:
   type: earnings
@@ -80,6 +80,18 @@ simulation:
   realized_profit_pct: -1.864
   outcome: loss
   matched_hypothesis: 'no'
+postmortem:
+  ran_at: '2026-07-12T23:30:05Z'
+  root_cause: wrong-assumption
+  lessons:
+  - When the highest-confidence panelist (the quant) says directional EV is ~0 and
+    the only positive-EV structure is out of mandate (e.g. a straddle), log NO TRADE
+    — do not manufacture a minimal directional position 'for the learning loop'; a
+    no-edge coin-flip still books real losses.
+  - Anchor entry prices to a live quote fetched at the actual entry timestamp, not
+    a stale pre-move reference — validate the planned entry is still within a small
+    tolerance of the current price before filling, and re-price or abort if the stock
+    has already run away from the modeled entry.
 ---
 
 ## Scouted 2026-07-02T11:00:05Z
@@ -98,3 +110,7 @@ Full debate with citations in `transcript.md`.
 ---
 ### Revision 2026-07-10T22:46:36Z
 Simulated LEVI buy: -1.864% (loss, matched=no)
+
+---
+### Revision 2026-07-12T23:30:05Z
+Post-mortem: wrong-assumption

@@ -82,3 +82,53 @@
     date/time verified present in the price provider.
   date: '2026-07-06'
   source_id: 2026-07-07-lime-ipo
+- event_type: earnings
+  tickers:
+  - DAL
+  text: A catalyst that already drove a large multi-week run to a 52-week high above
+    the Street mean target is priced in — do not re-bet the same fundamental as a
+    fresh gap trigger for the print.
+  date: '2026-07-12'
+  source_id: 2026-06-26-delta-q2-fy26
+- event_type: earnings
+  tickers:
+  - DAL
+  text: When the strongest unrebutted dissent aligns with the quant's own EV math
+    (long only positive if P(up) > 0.54, netting ~+0.5% if forced), synthesize to
+    NO-TRADE rather than a quarter-size directional position.
+  date: '2026-07-12'
+  source_id: 2026-06-26-delta-q2-fy26
+- event_type: earnings
+  tickers:
+  - LEVI
+  text: When the highest-confidence panelist (the quant) says directional EV is ~0
+    and the only positive-EV structure is out of mandate (e.g. a straddle), log NO
+    TRADE — do not manufacture a minimal directional position 'for the learning loop';
+    a no-edge coin-flip still books real losses.
+  date: '2026-07-12'
+  source_id: 2026-07-02-levi-q2-fy26
+- event_type: earnings
+  tickers:
+  - LEVI
+  text: Anchor entry prices to a live quote fetched at the actual entry timestamp,
+    not a stale pre-move reference — validate the planned entry is still within a
+    small tolerance of the current price before filling, and re-price or abort if
+    the stock has already run away from the modeled entry.
+  date: '2026-07-12'
+  source_id: 2026-07-02-levi-q2-fy26
+- event_type: regulatory
+  tickers:
+  - CZR
+  text: Before finalizing any plan, validate that every entry and exit timestamp falls
+    within an open trading session (not a weekend or exchange holiday) for the specific
+    instrument, and roll non-trading exit dates forward to the next open session.
+  date: '2026-07-12'
+  source_id: 2026-07-08-caesars-icahn-fertitta-bidding-war
+- event_type: regulatory
+  tickers:
+  - CZR
+  text: Never map a corporate/legal calendar date (go-shop, earnings, deal deadlines)
+    directly onto an execution timestamp — treat such dates as catalysts and derive
+    the fill time from the nearest valid trading session.
+  date: '2026-07-12'
+  source_id: 2026-07-08-caesars-icahn-fertitta-bidding-war

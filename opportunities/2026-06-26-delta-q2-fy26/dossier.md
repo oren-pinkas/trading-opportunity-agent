@@ -1,7 +1,7 @@
 ---
 id: 2026-06-26-delta-q2-fy26
 title: Delta Air Lines Q2 FY2026 earnings (report July 10 BMO)
-status: simulated
+status: analyzed
 created: '2026-06-26T11:00:05Z'
 event:
   type: earnings
@@ -81,6 +81,16 @@ simulation:
   realized_profit_pct: -2.5007
   outcome: loss
   matched_hypothesis: 'no'
+postmortem:
+  ran_at: '2026-07-12T23:30:05Z'
+  root_cause: priced-in
+  lessons:
+  - A catalyst that already drove a large multi-week run to a 52-week high above the
+    Street mean target is priced in — do not re-bet the same fundamental as a fresh
+    gap trigger for the print.
+  - When the strongest unrebutted dissent aligns with the quant's own EV math (long
+    only positive if P(up) > 0.54, netting ~+0.5% if forced), synthesize to NO-TRADE
+    rather than a quarter-size directional position.
 ---
 
 ## Scouted 2026-06-26T11:00:05Z
@@ -105,3 +115,7 @@ debate with citations in `transcript.md`.
 ---
 ### Revision 2026-07-10T22:46:36Z
 Simulated DAL buy: -2.5007% (loss, matched=no)
+
+---
+### Revision 2026-07-12T23:30:05Z
+Post-mortem: priced-in
