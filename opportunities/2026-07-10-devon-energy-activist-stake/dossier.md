@@ -19,8 +19,9 @@ hypothesis:
     top-five stake (Ken Griffin-backed, pushing Devon to "quicken asset sales
     or sell itself") was reported by FT/Bloomberg on 2026-06-17, a full month
     before this 7/10 dossier, layered on Kimmeridge Energy's activism dating to
-    Nov 2025. The real market already delivered its verdict on the actual news:
-    the day-of reaction faded from +1.9% intraday to roughly -0.7% close, and
+    Nov 2025. The real market already delivered its verdict on the actual
+    news — the day-of reaction faded from +1.9% intraday to roughly -0.7%
+    close, and
     Truist cut its target to $61 (from $66) the day before this dossier was
     created — both the signature of priced-in news, not a fresh surprise. By
     the current time (7/12) we are roughly 18 trading days past the real
@@ -73,7 +74,7 @@ research:
     and Quant counter the gap is a long-standing structural E&P discount, not a
     fresh closable mispricing, and that any long is really an unhedged bet on
     oil/gas beta none of the three has edge on. The sharpest unresolved
-    sub-point is instrument/timeline: Bull's proposed 3-6mo $45/$55 call spread
+    sub-point is instrument/timeline — Bull's proposed 3-6mo $45/$55 call spread
     was rejected even by a sympathetic reading (realistic multi-activist
     forced-sale timelines run 9-18mo, so the spread can expire worthless while
     being directionally right); nobody reconciled what the correct DVN long
