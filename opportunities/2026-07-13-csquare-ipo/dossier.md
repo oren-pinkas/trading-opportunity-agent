@@ -1,7 +1,7 @@
 ---
 id: 2026-07-13-csquare-ipo
 title: Csquare (Brookfield) data center IPO priced this week
-status: scouted
+status: researched
 created: '2026-07-10T16:21:42Z'
 event:
   type: ipo
