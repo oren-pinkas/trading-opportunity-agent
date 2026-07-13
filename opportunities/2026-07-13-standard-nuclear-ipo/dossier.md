@@ -1,21 +1,19 @@
 ---
 id: 2026-07-13-standard-nuclear-ipo
-title: Standard Nuclear prices SMR fuel IPO week of July 13
+title: Standard Nuclear (STDN) IPO priced ahead of July 16 NYSE debut
 status: scouted
-created: '2026-07-08T14:26:18Z'
+created: '2026-07-13T13:04:45Z'
 event:
   type: ipo
-  summary: Standard Nuclear, an Oak Ridge-based small modular reactor fuel manufacturer,
-    plans to price its NYSE IPO (ticker STDN) the week of July 13, 2026, seeking up
-    to M at a valuation up to .55B amid AI-driven nuclear power demand.
-  impact_window: '2026-07-13'
+  summary: TRISO nuclear fuel maker Standard Nuclear targets up to $3.55B valuation,
+    IPO priced $18-21/share, NYSE debut July 16
+  impact_window: '2026-07-16'
 tickers:
 - STDN
 sources:
-- title: Nuclear Fuel Firm Standard Nuclear Eyes up to $3.55 Billion Valuation in
-    US IPO - US News
-  url: https://money.usnews.com/investing/news/articles/2026-07-07/nuclear-fuel-firm-standard-nuclear-eyes-up-to-3-55-billion-valuation-in-us-ipo
-  accessed_at: '2026-07-08T14:26:18Z'
+- title: Standard Nuclear seeks to raise up to $383.3M in US IPO
+  url: https://finance.yahoo.com/markets/stocks/articles/standard-nuclear-seeks-raise-383-122005463.html
+  accessed_at: '2026-07-13T13:04:45Z'
 ---
 
-## Scouted 2026-07-08T14:26:18Z
+## Scouted 2026-07-13T13:04:45Z
