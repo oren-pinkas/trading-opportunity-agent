@@ -1,7 +1,7 @@
 ---
 id: 2026-07-12-lockheed-ultra-maritime-acquisition
 title: Lockheed Martin to acquire Ultra Maritime for $3.45B
-status: scouted
+status: researched
 created: '2026-07-12T07:48:35Z'
 event:
   type: regulatory
@@ -15,6 +15,58 @@ sources:
 - title: Lockheed Martin to Acquire Ultra Maritime Solutions
   url: https://www.prnewswire.com/news-releases/lockheed-martin-to-acquire-ultra-maritime-solutions-302818351.html
   accessed_at: '2026-07-12T07:48:35Z'
+hypothesis:
+  statement: 'The LMT/Ultra Maritime acquisition is a sub-2%-of-cap cash bolt-on with
+    no verified execution price, no confirmed regulatory decision date, and no accretion
+    math. The multi-week clearance catalyst is genuinely asymmetric and potentially
+    mispriced (the bull''s strongest surviving point), but it is neither dateable
+    nor sizable today. Every input needed to construct a risk-defined trade is missing
+    or corrupted: all three personas independently pulled incoherent toa price series
+    for LMT (e.g. 385->141->160->302->228 across 2026-07-02 to 2026-07-13), so nobody
+    has a verified current price, verified deal terms beyond the $3.45B headline,
+    or a verified clearance timeline. This is a data-integrity failure upstream of
+    the EV math, not a marginal EV call decided by majority vote.'
+  direction: none
+  confidence: 80
+plan:
+  ticker: LMT
+  action: no-trade
+  entry:
+    time: null
+    target_price: null
+  exit:
+    time: null
+    target_price: null
+  expected_profit_pct: 0
+research:
+  strategy: three-round-panel
+  personas:
+  - bull
+  - bear
+  - quant
+  models:
+    bull: sonnet
+    bear: sonnet
+    quant: opus
+    synthesizer: opus
+  dissent: 'The sharpest unresolved disagreement is the nature of the regulatory review
+    window. The bull argues the market is pricing the clearance period as pure one-sided
+    drag -- a bear-case assumption smuggled in as a base rate -- and that the quant''s
+    own concession (multi-week drift widens from +0.1-0.3% at 1-day to +0.5-1.5% at
+    multi-week) directionally supports a small, catalyst-dated long entered now and
+    exited at clearance. The bear and quant counter that this drift is un-actionable
+    without a confirmed decision date or a reliable price anchor to size against.
+    If clearance is announced cleanly and LMT re-rates on the combined ASW/sonar backlog,
+    this NO-TRADE call will have missed a genuinely mispriced dormant catalyst --
+    and the failure will trace to letting corrupted price data veto a directionally
+    sound thesis, not to the thesis itself being wrong. A future post-mortem should
+    stress-test this scenario first: did a clean regulatory clearance follow, and
+    if so, did LMT re-rate on the news?'
+  last_updated: '2026-07-13T02:45:00Z'
 ---
 
 ## Scouted 2026-07-12T07:48:35Z
+
+## Researched 2026-07-13T02:45:00Z — NO-TRADE
+
+Three-round panel (bull/bear sonnet, quant opus; synthesizer opus). LMT signed a definitive agreement (2026-07-06/announced 2026-07-12) to acquire Ultra Maritime for $3.45B, expanding sonar/ASW portfolio, pending regulatory clearance. BULL argued the mispriced event is regulatory clearance itself (not the stale announcement), proposing a small catalyst-dated long into the clearance date. BEAR and QUANT independently converged on NO TRADE: the deal is ~1.5-2% of LMT's market cap (immaterial to earnings), the announcement is 6-7 days stale, and -- decisively -- all three personas independently pulled internally incoherent toa price series for LMT across the debate window (e.g. 385->141->160->302->228), meaning no one at the table has a verified current price, verified deal terms, or a verified clearance timeline. QUANT's Round 1 EV calc (P(favorable)=0.40 @ +0.5%, P(neutral)=0.35, P(unfavorable)=0.25 @ -0.8%) came to net EV ~ -0.10% after costs, Kelly-sizing to zero; QUANT's explicit flip trigger (any two of: confirmed regulatory decision date, >1% EPS accretion impact, one reliable multi-session price series) currently has zero conditions met. Verdict: NO TRADE (not scheduled, not simulated) -- a data-integrity gate upstream of the EV math, not a marginal call. Re-queue for research when a clean price feed and a confirmed regulatory calendar exist. Full debate with citations in transcript.md.

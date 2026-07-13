@@ -1,7 +1,7 @@
 ---
 id: 2026-07-12-nike-ieepa-tariff-refund
 title: Nike expects ~B IEEPA tariff refund
-status: scouted
+status: researched
 created: '2026-07-12T11:57:54Z'
 event:
   type: economic
@@ -14,6 +14,67 @@ sources:
 - title: US Tariff Update 2026 — Dimerco
   url: https://dimerco.com/us-tariff-update-2026/
   accessed_at: '2026-07-12T11:57:54Z'
+hypothesis:
+  statement: The ~$986M IEEPA tariff refund is stale, backward-looking information
+    disclosed at Nike's June 30, 2026 Q4 FY26 earnings call and already impounded
+    -- the actual market reaction was negative (~4% after-hours), driven by a 12%
+    Greater China sales decline and flattish FY27 guidance, so the refund provided
+    no arrest of the de-rating. There is no dated, Nike-specific catalyst inside the
+    Aug 1 window; the largest uncollected tranche (~$686M) sits under a genuine, under-priced
+    DOJ Federal Circuit appeal litigation tail that resolves on a court calendar (quarters),
+    not by Aug 1. No positive edge exists, and the residual drift is skewed mildly
+    negative.
+  direction: none
+  confidence: 80
+plan:
+  ticker: NKE
+  action: no-trade
+  entry:
+    time: null
+    target_price: null
+  exit:
+    time: null
+    target_price: null
+  expected_profit_pct: 0.0
+research:
+  strategy: three-round-panel
+  personas:
+  - bull
+  - bear
+  - quant
+  models:
+    bull: sonnet
+    bear: sonnet
+    quant: opus
+    synthesizer: opus
+  dissent: 'The strongest unresolved disagreement is whether forward cash-collection
+    of the ~$650-700M uncollected refund is a distinct, tradeable catalyst (bull)
+    or already fully discounted double-counting (bear + quant). Bull argues collection
+    is a separate forward leg -- buyback-capacity/balance-sheet optics into the next
+    10-Q, tradeable via a capped-downside convex call debit spread whose payoff quant''s
+    linear-equity EV math doesn''t capture. Bear and quant reject this as mechanical
+    and already-modeled: an efficiently priced receivable already discounts collection
+    timing/probability, bull produced no evidence the market is currently mispricing
+    those odds, and quant notes the position would be long exactly the tranche under
+    DOJ appeal. It is unresolved because neither side can point to a dated, scheduled
+    event inside the Aug 1 window to break the tie -- no confirmed Federal Circuit
+    date, no confirmed CBP Phase 3 date naming Nike''s disputed bucket. Bull concedes
+    the reframe is speculative (confidence cut 42->35); bear concedes it would fund
+    a trade only if such a dated event is confirmed. Post-mortem stress-test: if NKE
+    moves materially around a Phase 3 disbursement or an appeal docket entry, revisit
+    whether the market was in fact mispricing the collection/litigation odds the panel
+    assumed were efficient.'
+  last_updated: '2026-07-13T03:16:37Z'
 ---
 
 ## Scouted 2026-07-12T11:57:54Z
+
+## Researched 2026-07-13T03:16:37Z — NO-TRADE
+
+Three persona agents debated whether to trade NKE on the ~$986M IEEPA tariff refund headline (impact window 2026-08-01) across three rounds -- independent research, rebuttal, and neutral synthesis. Models: bull and bear on Sonnet, quant and synthesizer on Opus.
+
+The bull opened cautious (42/100): the $986M figure was disclosed at Nike's June 30 Q4 FY26 earnings call, already drove an ~8.2% pop June 26-July 2, and ex-refund gross margin actually slipped 10bps -- but only ~$300M of the $986M has been collected in cash, leaving ~$650-700M as a distinct forward cash-collection catalyst supporting balance-sheet optics into Aug 1, expressed via a small defined-risk call debit spread. The bear opened NO TRADE: the market's actual reaction to the June 30 print was negative (~4% after-hours) on 12% Greater China sales decline and flattish FY27 guidance -- professional money already looked through the refund and sold. Critically, bear surfaced that DOJ filed a Notice of Appeal to the Federal Circuit (June 2, 2026) challenging CBP's authority to refund tariffs on entries both finally liquidated and past the 80-day reprocessing window -- likely the bulk of Nike's remaining ~$700M -- creating real clawback/delay risk the bull's cash-collection thesis ignores. The quant opened NO TRADE on EV grounds: the catalyst already fired at earnings, no scheduled discrete event falls on Aug 1, and gross EV was already negative (-0.075%, net -0.23% after costs).
+
+By Round 2, bear's DOJ appeal point reshaped the debate. Quant revised its distribution to weight the negative bucket higher and worsen its magnitude, pushing EV_net to -0.6% to -0.66% -- more negative than Round 1, and noted any directional expression the numbers now support would be bearish, not bullish, since bull's spread is long precisely the contested tranche. Bear self-critiqued and downgraded even its own bear-put fallback for lacking a dated catalyst inside the window. Bull conceded the DOJ risk was real (though bounded to a delay, not necessarily a reversal, given 6-18 month appellate timelines) and reframed its trade as a convex, capped-loss bet on China-narrative fatigue and Phase 3 disbursement optics rather than the original stale-catalyst thesis, cutting confidence to 35/100.
+
+Verdict: stand aside (confidence 80 in no-trade). Two of three personas converged independently on NO TRADE with worsening EV; bull's remaining case survives only as a speculative reframe with no dated catalyst backing it. A data-integrity fault reinforced this: the repo's toa price NKE stub tool returned incoherent synthetic prices ($150-430) versus the real ~$43-44 tape -- responsible entry/stop sizing would be impossible regardless of view. Full debate with citations in transcript.md.
