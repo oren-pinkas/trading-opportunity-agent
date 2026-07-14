@@ -1,7 +1,7 @@
 ---
 id: 2026-07-13-macau-gaming-revenue-slump
 title: Macau GGR seen down 12% in July on World Cup diversion, rebound expected post-final
-status: scouted
+status: researched
 created: '2026-07-13T19:27:39Z'
 event:
   type: economic
