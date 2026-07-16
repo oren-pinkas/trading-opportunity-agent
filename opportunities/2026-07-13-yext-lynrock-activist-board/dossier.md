@@ -1,7 +1,7 @@
 ---
 id: 2026-07-13-yext-lynrock-activist-board
 title: Lynrock Lake activist stake pushes Yext strategy shift
-status: scouted
+status: researched
 created: '2026-07-13T04:31:24Z'
 event:
   type: economic
