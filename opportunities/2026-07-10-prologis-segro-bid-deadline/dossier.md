@@ -1,7 +1,7 @@
 ---
 id: 2026-07-10-prologis-segro-bid-deadline
 title: Prologis faces July 22 deadline on Segro takeover bid
-status: simulated
+status: analyzed
 created: '2026-07-10T07:38:15Z'
 event:
   type: regulatory
@@ -94,6 +94,17 @@ simulation:
   realized_profit_pct: -1.31
   outcome: loss
   matched_hypothesis: 'no'
+postmortem:
+  ran_at: '2026-07-22T23:30:01Z'
+  root_cause: wrong-assumption
+  lessons:
+  - A signal-to-noise ratio below ~0.15 on a linear-EV fade is not a durable edge,
+    and simulate-plans has no path-dependent stop-loss/invalidation enforcement --
+    it only diffs the plan's fixed entry/exit prices, so a plan's stated hard stop
+    or entry band is not actually enforced during simulation.
+  - When the actual entry fill prints outside the planned entry band, treat that as
+    an early falsification signal -- the market has already moved past the thesis
+    before the position opened.
 ---
 
 ## Scouted 2026-07-10T07:38:15Z
@@ -116,3 +127,7 @@ rounds.
 ---
 ### Revision 2026-07-22T22:30:04Z
 Simulated PLD short: -1.31% (loss, matched=no)
+
+---
+### Revision 2026-07-22T23:30:01Z
+Post-mortem: wrong-assumption

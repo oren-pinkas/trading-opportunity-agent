@@ -1,7 +1,7 @@
 ---
 id: 2026-07-12-nayax-cyber-breach-ultimatum
 title: Nayax faces data-leak ultimatum after cloud breach
-status: simulated
+status: analyzed
 created: '2026-07-12T18:06:04Z'
 event:
   type: regulatory
@@ -50,6 +50,14 @@ simulation:
   outcome: neutral
   matched_hypothesis: 'no'
   note: 'market data unavailable: ''no 1min bar for 2026-07-13 13:30:00'''
+postmortem:
+  ran_at: '2026-07-22T23:30:01Z'
+  root_cause: data
+  lessons:
+  - Before finalizing a plan's entry/exit timestamps, test-query the real price provider
+    (toa price <ticker> <timestamp> --provider twelvedata) for those exact timestamps
+    during research -- a plan that can't be priced by the real provider resolves as
+    an uninformative neutral, wasting the debate's qualitative work.
 ---
 
 ## Scouted 2026-07-12T18:06:04Z
@@ -81,3 +89,7 @@ Full transcript: see `transcript.md`.
 ---
 ### Revision 2026-07-21T22:31:54Z
 Skipped NYAX: market data unavailable ('no 1min bar for 2026-07-13 13:30:00')
+
+---
+### Revision 2026-07-22T23:30:01Z
+Post-mortem: data

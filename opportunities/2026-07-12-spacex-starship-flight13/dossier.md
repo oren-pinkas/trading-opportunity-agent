@@ -1,7 +1,7 @@
 ---
 id: 2026-07-12-spacex-starship-flight13
 title: SpaceX Starship Flight 13 test launch targeted for July 16
-status: simulated
+status: analyzed
 created: '2026-07-12T13:03:15Z'
 event:
   type: product
@@ -87,6 +87,14 @@ simulation:
   outcome: neutral
   matched_hypothesis: 'no'
   note: 'market data unavailable: ''no 1min bar for 2026-07-16 22:45:00'''
+postmortem:
+  ran_at: '2026-07-22T23:30:01Z'
+  root_cause: data
+  lessons:
+  - 'Freshly-IPO''d tickers (listed within ~1-2 months) are a distinct data-risk category:
+    if a research panel hits provider errors on toa price for the ticker, treat the
+    entire plan as data-coverage-at-risk and verify the exact planned entry/exit timestamps
+    are priceable before scheduling, not just a stale reference print.'
 ---
 
 ## Scouted 2026-07-12T13:03:15Z
@@ -124,3 +132,7 @@ aside otherwise. See `transcript.md` for the full three-round debate with citati
 ---
 ### Revision 2026-07-21T22:31:54Z
 Skipped SPCX: market data unavailable ('no 1min bar for 2026-07-16 22:45:00')
+
+---
+### Revision 2026-07-22T23:30:01Z
+Post-mortem: data

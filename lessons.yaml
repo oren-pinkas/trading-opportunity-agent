@@ -132,3 +132,57 @@
     the fill time from the nearest valid trading session.
   date: '2026-07-12'
   source_id: 2026-07-08-caesars-icahn-fertitta-bidding-war
+- event_type: regulatory
+  tickers:
+  - PLD
+  text: A signal-to-noise ratio below ~0.15 on a linear-EV fade is not a durable edge,
+    and simulate-plans has no path-dependent stop-loss/invalidation enforcement --
+    it only diffs the plan's fixed entry/exit prices, so a plan's stated hard stop
+    or entry band is not actually enforced during simulation.
+  date: '2026-07-22'
+  source_id: 2026-07-10-prologis-segro-bid-deadline
+- event_type: regulatory
+  tickers:
+  - PLD
+  text: When the actual entry fill prints outside the planned entry band, treat that
+    as an early falsification signal -- the market has already moved past the thesis
+    before the position opened.
+  date: '2026-07-22'
+  source_id: 2026-07-10-prologis-segro-bid-deadline
+- event_type: geopolitical
+  tickers:
+  - USO
+  - CL
+  text: An ETF-vs-underlying price divergence (e.g. USO vs CL) is not by itself evidence
+    for a mean-reversion fade -- require confirmed NAV/creation-redemption data before
+    sizing; absent that, the divergence is equally consistent with real continuing
+    flow as with a mechanical mispricing.
+  date: '2026-07-22'
+  source_id: 2026-07-13-oil-iran-tension-surge
+- event_type: geopolitical
+  tickers:
+  - USO
+  - CL
+  text: 'simulate-plans has no path-dependent monitoring: a plan''s ''hard invalidation
+    on confirmed disruption'' clause is prose only and will not bound the simulated
+    loss if the price keeps moving against the position.'
+  date: '2026-07-22'
+  source_id: 2026-07-13-oil-iran-tension-surge
+- event_type: regulatory
+  tickers:
+  - NYAX
+  text: Before finalizing a plan's entry/exit timestamps, test-query the real price
+    provider (toa price <ticker> <timestamp> --provider twelvedata) for those exact
+    timestamps during research -- a plan that can't be priced by the real provider
+    resolves as an uninformative neutral, wasting the debate's qualitative work.
+  date: '2026-07-22'
+  source_id: 2026-07-12-nayax-cyber-breach-ultimatum
+- event_type: product
+  tickers:
+  - SPCX
+  text: 'Freshly-IPO''d tickers (listed within ~1-2 months) are a distinct data-risk
+    category: if a research panel hits provider errors on toa price for the ticker,
+    treat the entire plan as data-coverage-at-risk and verify the exact planned entry/exit
+    timestamps are priceable before scheduling, not just a stale reference print.'
+  date: '2026-07-22'
+  source_id: 2026-07-12-spacex-starship-flight13

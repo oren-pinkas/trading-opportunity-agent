@@ -1,7 +1,7 @@
 ---
 id: 2026-07-13-oil-iran-tension-surge
 title: Oil surges 6-7% as US-Iran tensions escalate
-status: simulated
+status: analyzed
 created: '2026-07-13T13:04:45Z'
 event:
   type: geopolitical
@@ -80,6 +80,17 @@ simulation:
   realized_profit_pct: -2.5789
   outcome: loss
   matched_hypothesis: 'no'
+postmortem:
+  ran_at: '2026-07-22T23:30:01Z'
+  root_cause: wrong-assumption
+  lessons:
+  - An ETF-vs-underlying price divergence (e.g. USO vs CL) is not by itself evidence
+    for a mean-reversion fade -- require confirmed NAV/creation-redemption data before
+    sizing; absent that, the divergence is equally consistent with real continuing
+    flow as with a mechanical mispricing.
+  - 'simulate-plans has no path-dependent monitoring: a plan''s ''hard invalidation
+    on confirmed disruption'' clause is prose only and will not bound the simulated
+    loss if the price keeps moving against the position.'
 ---
 
 ## Scouted 2026-07-13T13:04:45Z
@@ -95,3 +106,7 @@ Confidence is capped at 60, not higher, because the Bear's core objection was ne
 ---
 ### Revision 2026-07-21T22:31:54Z
 Simulated USO short: -2.5789% (loss, matched=no)
+
+---
+### Revision 2026-07-22T23:30:01Z
+Post-mortem: wrong-assumption
