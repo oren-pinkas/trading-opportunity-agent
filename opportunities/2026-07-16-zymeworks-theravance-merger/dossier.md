@@ -1,7 +1,7 @@
 ---
 id: 2026-07-16-zymeworks-theravance-merger
 title: Zymeworks to acquire Theravance Biopharma for USD 929M cash-plus-CVR
-status: scouted
+status: researched
 created: '2026-07-16T07:53:17Z'
 event:
   type: regulatory
