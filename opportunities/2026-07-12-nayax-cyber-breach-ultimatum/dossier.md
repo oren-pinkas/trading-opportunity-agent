@@ -1,7 +1,7 @@
 ---
 id: 2026-07-12-nayax-cyber-breach-ultimatum
 title: Nayax faces data-leak ultimatum after cloud breach
-status: scheduled
+status: simulated
 created: '2026-07-12T18:06:04Z'
 event:
   type: regulatory
@@ -15,16 +15,14 @@ sources:
   url: https://www.calcalistech.com/ctechnews/article/rjpeasiqfg
   accessed_at: '2026-07-12T18:06:04Z'
 hypothesis:
-  statement: >-
-    TheSyndicate's extortion claims (~1yr dwell, 100TB, 1B+ card records) are
-    quantitatively implausible against Nayax's real scale (~$400M revenue, ~1M
-    terminals) and are contradicted by a 6-K carrying Rule 10b-5 disclosure
-    liability the attacker does not bear; the real reported reaction (~-8.7% on
-    Nasdaq) is elevated-but-not-panic, consistent with the market NOT pricing the
-    maximal bear case. A small long positioned to harvest pre-deadline relief
-    drift and exited BEFORE the 2026-07-21 binary leak deadline (clearing the
-    2026-07-18/19 weekend gap) has modest positive expected value; holding
-    through the deadline is rejected on fat-left-tail grounds.
+  statement: TheSyndicate's extortion claims (~1yr dwell, 100TB, 1B+ card records)
+    are quantitatively implausible against Nayax's real scale (~$400M revenue, ~1M
+    terminals) and are contradicted by a 6-K carrying Rule 10b-5 disclosure liability
+    the attacker does not bear; the real reported reaction (~-8.7% on Nasdaq) is elevated-but-not-panic,
+    consistent with the market NOT pricing the maximal bear case. A small long positioned
+    to harvest pre-deadline relief drift and exited BEFORE the 2026-07-21 binary leak
+    deadline (clearing the 2026-07-18/19 weekend gap) has modest positive expected
+    value; holding through the deadline is rejected on fat-left-tail grounds.
   direction: long
   confidence: 44
 plan:
@@ -45,6 +43,13 @@ research:
     quant: opus
     synthesizer: opus
   last_updated: '2026-07-13T03:04:18Z'
+simulation:
+  ran_at: '2026-07-21T22:31:54Z'
+  fills: []
+  realized_profit_pct: 0.0
+  outcome: neutral
+  matched_hypothesis: 'no'
+  note: 'market data unavailable: ''no 1min bar for 2026-07-13 13:30:00'''
 ---
 
 ## Scouted 2026-07-12T18:06:04Z
@@ -72,3 +77,7 @@ Heartland Payment Systems 2008 precedent, rather than a generic-breach base rate
 the operative tail-risk analogue).
 
 Full transcript: see `transcript.md`.
+
+---
+### Revision 2026-07-21T22:31:54Z
+Skipped NYAX: market data unavailable ('no 1min bar for 2026-07-13 13:30:00')
