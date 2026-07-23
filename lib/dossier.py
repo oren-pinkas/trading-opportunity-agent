@@ -42,7 +42,15 @@ def load(path: str) -> tuple[dict, str]:
     text = open(path, encoding="utf-8").read()
     if not text.startswith("---"):
         raise ValueError(f"{path}: missing frontmatter fence")
-    _, fm_block, body = text.split("---", 2)
+    lines = text.split("\n")
+    if lines[0] != "---":
+        raise ValueError(f"{path}: missing frontmatter fence")
+    try:
+        end = next(i for i in range(1, len(lines)) if lines[i] == "---")
+    except StopIteration:
+        raise ValueError(f"{path}: missing closing frontmatter fence")
+    fm_block = "\n".join(lines[1:end])
+    body = "\n".join(lines[end + 1:])
     return yaml.safe_load(fm_block) or {}, body.lstrip("\n")
 
 
