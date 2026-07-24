@@ -1,7 +1,7 @@
 ---
 id: 2026-07-13-tariff-section122-expiry
 title: Section 122 tariffs expire July 24, reciprocal tariff reversion
-status: simulated
+status: analyzed
 created: '2026-07-13T18:24:37Z'
 event:
   type: regulatory
@@ -72,6 +72,19 @@ simulation:
   outcome: neutral
   matched_hypothesis: 'no'
   note: 'market data unavailable: ''no 1min bar for 2026-07-22 14:00:00'''
+postmortem:
+  ran_at: '2026-07-24T23:40:00Z'
+  root_cause: data
+  lessons:
+  - 'Never treat a single missing minute-bar as a terminal skip: exhaust a fallback
+    ladder (retry, then adjacent minutes within a stated tolerance e.g. plus/minus
+    5 min same session, then a second provider) before recording market-data-unavailable,
+    and log which rung filled.'
+  - 'Size fill-precision to the size of the edge: when expected_profit_pct is under
+    about 0.5% and confidence is under 30, use a tolerance window (VWAP over N minutes
+    or nearest available bar within plus/minus X min) instead of an exact-minute target
+    price, since these low-conviction learning-loop trades should be the most execution-robust,
+    not the most fragile.'
 ---
 
 ## Scouted 2026-07-13T18:24:37Z
@@ -93,3 +106,7 @@ inverted." Full debate with citations in `transcript.md`.
 ---
 ### Revision 2026-07-24T22:46:21Z
 Skipped STLD: market data unavailable ('no 1min bar for 2026-07-22 14:00:00')
+
+---
+### Revision 2026-07-24T23:40:00Z
+Post-mortem: data

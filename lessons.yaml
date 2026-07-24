@@ -186,3 +186,24 @@
     timestamps are priceable before scheduling, not just a stale reference print.'
   date: '2026-07-22'
   source_id: 2026-07-12-spacex-starship-flight13
+- event_type: regulatory
+  tickers:
+  - PG
+  - STLD
+  text: 'Never treat a single missing minute-bar as a terminal skip: exhaust a fallback
+    ladder (retry, then adjacent minutes within a stated tolerance e.g. plus/minus
+    5 min same session, then a second provider) before recording market-data-unavailable,
+    and log which rung filled.'
+  date: '2026-07-24'
+  source_id: 2026-07-13-tariff-section122-expiry
+- event_type: regulatory
+  tickers:
+  - PG
+  - STLD
+  text: 'Size fill-precision to the size of the edge: when expected_profit_pct is
+    under about 0.5% and confidence is under 30, use a tolerance window (VWAP over
+    N minutes or nearest available bar within plus/minus X min) instead of an exact-minute
+    target price, since these low-conviction learning-loop trades should be the most
+    execution-robust, not the most fragile.'
+  date: '2026-07-24'
+  source_id: 2026-07-13-tariff-section122-expiry
