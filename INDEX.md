@@ -65,7 +65,7 @@
 | 2026-07-10-kroger-giant-eagle-acquisition | Kroger to acquire Giant Eagle for $1.65B | researched | — |
 | 2026-07-10-meta-broadcom-ai-chip-production | Meta to start production of Broadcom co-developed Iris AI chip in September | researched | — |
 | 2026-07-10-micron-dram-capex-plan | Micron boosts US DRAM investment to $250B through 2035 | researched | — |
-| 2026-07-10-prologis-segro-bid-deadline | Prologis faces July 22 deadline on Segro takeover bid | simulated | loss |
+| 2026-07-10-prologis-segro-bid-deadline | Prologis faces July 22 deadline on Segro takeover bid | analyzed | loss |
 | 2026-07-10-reciprocal-tariff-reset-aug1 | Trump reciprocal tariff reset on 14 countries takes effect Aug 1 | researched | — |
 | 2026-07-10-replimune-rp1-adcom | Replimune FDA Advisory Committee for RP1 melanoma BLA | researched | — |
 | 2026-07-10-section122-tariff-expiration | Section 122 10% global tariff surcharge sunsets July 24 | researched | — |
@@ -105,7 +105,7 @@
 | 2026-07-12-june-ppi-report | June PPI report due July 15 | researched | — |
 | 2026-07-12-lockheed-ultra-maritime-acquisition | Lockheed Martin to acquire Ultra Maritime for $3.45B | researched | — |
 | 2026-07-12-mannkind-furoscix-pdufa | MannKind Furoscix ReadyFlow Autoinjector PDUFA date July 26 | researched | — |
-| 2026-07-12-nayax-cyber-breach-ultimatum | Nayax faces data-leak ultimatum after cloud breach | simulated | neutral |
+| 2026-07-12-nayax-cyber-breach-ultimatum | Nayax faces data-leak ultimatum after cloud breach | analyzed | neutral |
 | 2026-07-12-netflix-q2-fy26 | Netflix Q2 2026 earnings | researched | — |
 | 2026-07-12-nike-ieepa-tariff-refund | Nike expects ~B IEEPA tariff refund | researched | — |
 | 2026-07-12-nissan-peoplesoft-breach | Nissan Americas confirms employee data breach via Oracle PeopleSoft zero-day | researched | — |
@@ -124,7 +124,7 @@
 | 2026-07-12-ryanair-easyjet-atc-strikes | Coordinated European ATC strikes force Ryanair/easyJet summer schedule cuts | researched | — |
 | 2026-07-12-sec-crypto-index-etf-diversification | SEC weighs letting crypto index ETFs expand beyond BTC/ETH | researched | — |
 | 2026-07-12-sec-regulation-crypto-nprm | SEC targets July 2026 for Regulation Crypto rule proposal | researched | — |
-| 2026-07-12-spacex-starship-flight13 | SpaceX Starship Flight 13 test launch targeted for July 16 | simulated | neutral |
+| 2026-07-12-spacex-starship-flight13 | SpaceX Starship Flight 13 test launch targeted for July 16 | analyzed | neutral |
 | 2026-07-12-tesla-q2-fy26 | Tesla Q2 2026 earnings | researched | — |
 | 2026-07-12-unitedhealth-q2-fy26 | UnitedHealth Q2 2026 earnings | researched | — |
 | 2026-07-12-universal-odyssey-box-office | Universal's 'The Odyssey' tests summer box office | researched | — |
@@ -181,7 +181,7 @@
 | 2026-07-13-mrna-flu-vaccine-pdufa | Moderna's mRNA-1010 flu vaccine faces FDA PDUFA decision Aug 5 | researched | — |
 | 2026-07-13-nlight-laser-weapon-contract | nLIGHT M Pentagon laser weapon OTA ceiling ramp | researched | — |
 | 2026-07-13-nrx-ketafree-gdufa | NRx Pharmaceuticals KETAFREE GDUFA decision | researched | — |
-| 2026-07-13-oil-iran-tension-surge | Oil surges 6-7% as US-Iran tensions escalate | simulated | loss |
+| 2026-07-13-oil-iran-tension-surge | Oil surges 6-7% as US-Iran tensions escalate | analyzed | loss |
 | 2026-07-13-okyo-urcosimod-fda-phase3 | OKYO Pharma gets positive FDA feedback, advances urcosimod to Phase 3 | researched | — |
 | 2026-07-13-padcev-keytruda-perioperative-pdufa | Padcev+Keytruda perioperative bladder cancer PDUFA decision | researched | — |
 | 2026-07-13-palantir-nvidia-sovereign-ai | Palantir and Nvidia launch Nemotron sovereign AI engine for US government | scheduled | — |
@@ -195,7 +195,7 @@
 | 2026-07-13-standard-nuclear-ipo | Standard Nuclear (STDN) IPO priced ahead of July 16 NYSE debut | researched | — |
 | 2026-07-13-state-street-q2-earnings | State Street Q2 2026 earnings | researched | — |
 | 2026-07-13-suez-canal-surcharge-hike | Suez Canal Authority raises transit surcharges effective July 15 | researched | — |
-| 2026-07-13-tariff-section122-expiry | Section 122 tariffs expire July 24, reciprocal tariff reversion | scheduled | — |
+| 2026-07-13-tariff-section122-expiry | Section 122 tariffs expire July 24, reciprocal tariff reversion | simulated | neutral |
 | 2026-07-13-tmobile-q2-earnings | T-Mobile Q2 2026 earnings | researched | — |
 | 2026-07-13-truist-q2-earnings | Truist Financial Q2 2026 earnings | researched | — |
 | 2026-07-13-uber-baidu-dubai-robotaxi | Uber and Baidu partner to launch Apollo Go robotaxis in Dubai | scheduled | — |
@@ -307,143 +307,280 @@
 | 2026-07-21-ccc-elliott-stake | Elliott builds activist stake in CCC Intelligent Solutions | researched | — |
 | 2026-07-21-china-ai-chip-export-controls | China considers tighter export controls on AI chips and models | researched | — |
 | 2026-07-21-clarity-act-senate-vote | CLARITY Act crypto market structure bill Senate floor vote | researched | — |
-| 2026-07-21-deere-right-to-repair-settlement | Deere FTC right to repair settlement | scouted | — |
-| 2026-07-21-edwards-genesis-antitrust-suit | DOJ antitrust suit against Edwards Lifesciences-Genesis MedTech deal | scouted | — |
-| 2026-07-21-eu-steel-tariff-quota-cut | EU steel tariff quota cut boosts European steelmakers | scouted | — |
-| 2026-07-21-first-hawaiian-trico-merger | First Hawaiian-TriCo Bancshares all-stock merger | scouted | — |
-| 2026-07-21-fomc-july-rate-decision | FOMC July rate decision | scouted | — |
-| 2026-07-21-gm-q2-earnings | General Motors Q2 2026 earnings | scouted | — |
-| 2026-07-21-google-pixel-11-launch | Google Pixel 11 launch event | scouted | — |
-| 2026-07-21-ibm-q2-earnings | IBM Q2 2026 earnings after worst-day plunge | scouted | — |
-| 2026-07-21-india-us-trade-deal | India-US trade deal ahead of tariff deadline | scouted | — |
-| 2026-07-21-intel-q2-earnings | Intel Q2 2026 earnings report | scouted | — |
-| 2026-07-21-italy-aviation-strikes-malpensa | Italy aviation strikes threaten Milan Malpensa ground handling | scouted | — |
-| 2026-07-21-leqembi-iqlik-pdufa | Leqembi IQLIK PDUFA decision | scouted | — |
-| 2026-07-21-meta-q2-earnings | Meta Platforms Q2 2026 earnings report | scouted | — |
-| 2026-07-21-microsoft-q2-earnings | Microsoft Q2 2026 earnings report | scouted | — |
-| 2026-07-21-nextera-dominion-merger-review | NextEra-Dominion merger enters six-month Virginia SCC review | scouted | — |
-| 2026-07-21-novo-lilly-advertising-lawsuit | Novo Nordisk sues Eli Lilly over GLP-1 advertising claims | scouted | — |
-| 2026-07-21-opec-plus-august-meeting | OPEC+ August production meeting | scouted | — |
-| 2026-07-21-padcev-keytruda-pdufa | Padcev plus Keytruda bladder cancer PDUFA decision | scouted | — |
-| 2026-07-21-paramount-wbd-merger-ruling | Paramount-Warner Bros Discovery merger injunction ruling | scouted | — |
-| 2026-07-21-plug-power-data-center-deal | Plug Power lands Stream US Data Centers land and power deal | scouted | — |
-| 2026-07-21-qiagen-strategic-review | Qiagen evaluates strategic options including potential sale | scouted | — |
-| 2026-07-21-sanofi-sarclisa-pdufa | Sanofi Sarclisa subcutaneous PDUFA decision | scouted | — |
-| 2026-07-21-senate-russia-secondary-tariffs-bill | Senate draft bill: secondary tariffs on China/India for buying Russian energy | scouted | — |
-| 2026-07-21-tesla-q2-earnings | Tesla Q2 2026 earnings | scouted | — |
-| 2026-07-21-usda-august-crop-report | USDA August WASDE report to test corn/soybean yield concerns | scouted | — |
+| 2026-07-21-deere-right-to-repair-settlement | Deere FTC right to repair settlement | researched | — |
+| 2026-07-21-edwards-genesis-antitrust-suit | DOJ antitrust suit against Edwards Lifesciences-Genesis MedTech deal | researched | — |
+| 2026-07-21-eu-steel-tariff-quota-cut | EU steel tariff quota cut boosts European steelmakers | researched | — |
+| 2026-07-21-first-hawaiian-trico-merger | First Hawaiian-TriCo Bancshares all-stock merger | researched | — |
+| 2026-07-21-fomc-july-rate-decision | FOMC July rate decision | researched | — |
+| 2026-07-21-gm-q2-earnings | General Motors Q2 2026 earnings | researched | — |
+| 2026-07-21-google-pixel-11-launch | Google Pixel 11 launch event | researched | — |
+| 2026-07-21-ibm-q2-earnings | IBM Q2 2026 earnings after worst-day plunge | researched | — |
+| 2026-07-21-india-us-trade-deal | India-US trade deal ahead of tariff deadline | researched | — |
+| 2026-07-21-intel-q2-earnings | Intel Q2 2026 earnings report | researched | — |
+| 2026-07-21-italy-aviation-strikes-malpensa | Italy aviation strikes threaten Milan Malpensa ground handling | researched | — |
+| 2026-07-21-leqembi-iqlik-pdufa | Leqembi IQLIK PDUFA decision | researched | — |
+| 2026-07-21-meta-q2-earnings | Meta Platforms Q2 2026 earnings report | researched | — |
+| 2026-07-21-microsoft-q2-earnings | Microsoft Q2 2026 earnings report | researched | — |
+| 2026-07-21-nextera-dominion-merger-review | NextEra-Dominion merger enters six-month Virginia SCC review | researched | — |
+| 2026-07-21-novo-lilly-advertising-lawsuit | Novo Nordisk sues Eli Lilly over GLP-1 advertising claims | researched | — |
+| 2026-07-21-opec-plus-august-meeting | OPEC+ August production meeting | researched | — |
+| 2026-07-21-padcev-keytruda-pdufa | Padcev plus Keytruda bladder cancer PDUFA decision | researched | — |
+| 2026-07-21-paramount-wbd-merger-ruling | Paramount-Warner Bros Discovery merger injunction ruling | researched | — |
+| 2026-07-21-plug-power-data-center-deal | Plug Power lands Stream US Data Centers land and power deal | researched | — |
+| 2026-07-21-qiagen-strategic-review | Qiagen evaluates strategic options including potential sale | researched | — |
+| 2026-07-21-sanofi-sarclisa-pdufa | Sanofi Sarclisa subcutaneous PDUFA decision | researched | — |
+| 2026-07-21-senate-russia-secondary-tariffs-bill | Senate draft bill: secondary tariffs on China/India for buying Russian energy | researched | — |
+| 2026-07-21-tesla-q2-earnings | Tesla Q2 2026 earnings | researched | — |
+| 2026-07-21-usda-august-crop-report | USDA August WASDE report to test corn/soybean yield concerns | researched | — |
 | 2026-07-21-verizon-q2-fy26 | Verizon Q2 FY26 earnings | researched | — |
-| 2026-07-21-vertex-crinetics-deal-close | Vertex acquisition of Crinetics pending close | scouted | — |
-| 2026-07-21-zim-hapaglloyd-merger-closing | ZIM-Hapag-Lloyd USD 35/share merger awaits Israeli state approval | scouted | — |
-| 2026-07-22-abcellera-phase2-readout | AbCellera ABCL635 Phase 2 topline data due Q3 2026 | scouted | — |
-| 2026-07-22-accenture-source-code-breach | Accenture confirms breach after threat actor claims stolen source code | scouted | — |
-| 2026-07-22-adtran-preliminary-q2-miss | Adtran preliminary Q2 revenue and margin miss | scouted | — |
-| 2026-07-22-american-airlines-q2-2026 | American Airlines Q2 2026 earnings | scouted | — |
-| 2026-07-22-ast-spacemobile-bluebird-launch | AST SpaceMobile BlueBirds 11-13 Orbital Launch | scouted | — |
-| 2026-07-22-atea-hcv-phase3-readout | Atea Pharmaceuticals nears first Phase 3 HCV topline results | scouted | — |
-| 2026-07-22-atnt-starlink-mobile-threat | AT&T weighed down by Starlink direct-to-device mobile threat | scouted | — |
-| 2026-07-22-avanos-medical-merger-close | Avanos Medical take-private merger targeted to close July 27 | scouted | — |
-| 2026-07-22-avav-p550-army-order | AeroVironment secures first full-rate production order for P550 drone | scouted | — |
-| 2026-07-22-axalta-akzonobel-merger-vote | Axalta sets August 5 shareholder vote on AkzoNobel merger | scouted | — |
-| 2026-07-22-banner-pacific-financial-merger-vote | Pacific Financial sets August 12 vote on Banner Corp merger | scouted | — |
-| 2026-07-22-biomarin-voxzogo-pdufa | BioMarin VOXZOGO full-approval PDUFA date | scouted | — |
-| 2026-07-22-brazil-section301-tariff-25pct | US 25% Section 301 tariff on Brazil takes effect | scouted | — |
-| 2026-07-22-brazil-section301-tariff-stacking | US Section 301 tariff on Brazil goods stacks to 35% before easing | scouted | — |
-| 2026-07-22-calmaine-doj-antitrust-suit | DOJ and states sue Cal-Maine and Hickman's over egg price-fixing | scouted | — |
-| 2026-07-22-capricor-pdufa-deramiocel | Capricor Deramiocel PDUFA decision | scouted | — |
-| 2026-07-22-capstone-copper-chile-strike | Capstone Copper faces Chile labor strike risk at Mantoverde | scouted | — |
-| 2026-07-22-carnival-q2-2026-earnings | Carnival Q2 2026 earnings | scouted | — |
-| 2026-07-22-clacton-byelection-gbp | Clacton by-election framed as referendum on Farage/Reform UK | scouted | — |
-| 2026-07-22-comcast-nbcuniversal-spinoff | Comcast advances NBCUniversal/Sky spin-off to split media and tech | scouted | — |
-| 2026-07-22-copper-section232-tariff-deadline | Section 232 copper tariff implementation deadline Aug 1 | scouted | — |
-| 2026-07-22-craneware-cyberattack | Craneware discloses cyberattack with data exfiltration | scouted | — |
-| 2026-07-22-critical-metals-tanbreez-stake | Critical Metals boosts Greenland Tanbreez rare earth stake to 92.5 percent | scouted | — |
-| 2026-07-22-cvs-health-q2-earnings | CVS Health Q2 2026 Earnings | scouted | — |
-| 2026-07-22-dea-cannabis-rescheduling-decision | DEA Marijuana Rescheduling Final Decision Pending | scouted | — |
-| 2026-07-22-disney-q3-fy2026-earnings | Disney fiscal Q3 2026 earnings | scouted | — |
-| 2026-07-22-draftkings-prediction-market-share-loss | DraftKings loses user momentum to Kalshi/Polymarket during World Cup | scouted | — |
-| 2026-07-22-dynagas-russia-lng-sanctions-veto | Dynagas LNG Partners in the crosshairs of Greek EU sanctions veto | scouted | — |
-| 2026-07-22-edison-intl-wildfire-liability | Edison International falls on new Southern California wildfire | scouted | — |
-| 2026-07-22-eurobank-q2-earnings | Eurobank sets Q2 2026 earnings date amid Greek bank rally | scouted | — |
-| 2026-07-22-european-banks-q2-earnings-wave | European banks kick off Q2 earnings on rates/trading windfall | scouted | — |
-| 2026-07-22-faraday-future-reverse-split | Faraday Future 1-for-150 reverse stock split | scouted | — |
-| 2026-07-22-fedex-freight-first-standalone-earnings | FedEx Freight first full standalone quarter as pure-play LTL | scouted | — |
-| 2026-07-22-first-bancorp-first-carolina-merger | First Bancorp to Acquire First Carolina Bancshares | scouted | — |
-| 2026-07-22-flex-cloud-power-spinoff | Flex to separate Cloud and Power Infrastructure into new public company | scouted | — |
-| 2026-07-22-franco-nevada-gold-selloff | Franco-Nevada relative resilience amid gold price slide | scouted | — |
-| 2026-07-22-ge-vernova-q2-earnings | GE Vernova reports Q2 2026 earnings amid grid/power demand boom | scouted | — |
-| 2026-07-22-henry-boot-profit-warning | Henry Boot issues second profit warning of 2026 | scouted | — |
-| 2026-07-22-homebuilders-mortgage-rate-pressure | Homebuilder stocks pressured as mortgage rates climb past 6.5% | scouted | — |
-| 2026-07-22-india-us-trade-deadline | India-US trade deal tariff deadline | scouted | — |
-| 2026-07-22-ionis-eplontersen-attr-cm-data | Ionis/AstraZeneca eplontersen ATTR-CM Phase 3 data at conference | scouted | — |
-| 2026-07-22-iren-ai-contract-rerating | IREN re-rates on USD 2.8B AI contract haul, raised ARR target | scouted | — |
-| 2026-07-22-jetblue-fuel-capacity-cuts | JetBlue slows hiring, cuts capacity on soaring jet fuel costs | scouted | — |
-| 2026-07-22-kbr-mission-tech-spinoff | KBR targets 2H26 close for Mission Technology Solutions spin-off | scouted | — |
-| 2026-07-22-kioxia-viasat-patent-appeal | Kioxia Federal Circuit appeal of USD 229M Viasat patent verdict | scouted | — |
-| 2026-07-22-kratos-q2-2026-earnings | Kratos Defense Q2 2026 earnings | scouted | — |
-| 2026-07-22-l3harris-missile-defense-contract | L3Harris wins .6M Missile Defense Agency IDIQ contract | scouted | — |
-| 2026-07-22-legend-biotech-takeover-bid | Legend Biotech reportedly receives takeover bid | scouted | — |
-| 2026-07-22-lrcx-china-export-controls | Lam Research China chip export control risk | scouted | — |
-| 2026-07-22-lucid-h1-2026-results | Lucid H1 2026 results amid bankruptcy-rumor rebuttal | scouted | — |
-| 2026-07-22-magna-canada-tariff-escalation | Magna Canada auto tariff escalation | scouted | — |
-| 2026-07-22-masimo-apple-patent-verdict | Masimo patent verdict against Apple upheld by federal judge | scouted | — |
-| 2026-07-22-memory-chip-earnings-rally | Memory chip stocks surge ahead of Q2 earnings reports | scouted | — |
-| 2026-07-22-moodys-q2-earnings | Moody's reports Q2 2026 earnings amid ratings-demand cycle | scouted | — |
-| 2026-07-22-mp-materials-china-entity-listing | MP Materials added to China export control entity list | scouted | — |
-| 2026-07-22-neogen-chemicals-downgrade | Neogen Chemicals credit rating cut on battery project delays | scouted | — |
-| 2026-07-22-next-bridge-hydrocarbons-special-dividend | Next Bridge Hydrocarbons special stock dividend distribution | scouted | — |
-| 2026-07-22-nextcure-avere-merger | NextCure Avere Therapeutics merger close | scouted | — |
-| 2026-07-22-nintendo-switch2-price-hike | Nintendo Switch 2 price rises to USD 499 on September 1 | scouted | — |
-| 2026-07-22-nuscale-q2-earnings | NuScale Power Q2 2026 earnings call | scouted | — |
-| 2026-07-22-nvidia-nebius-stake | Nvidia discloses 9.3% passive stake in Nebius | scouted | — |
-| 2026-07-22-olaplex-going-private | Olaplex going-private merger vote pending | scouted | — |
-| 2026-07-22-olin-huntsman-merger-vote | Olin and Huntsman set August 25 shareholder votes on merger | scouted | — |
-| 2026-07-22-opec-plus-august-meeting | OPEC+ Aug 2 meeting on production policy | scouted | — |
-| 2026-07-22-otsuka-nuedexta-patent-expiry | Nuedexta patent expiry opens door to Hetero generic launch | scouted | — |
-| 2026-07-22-palantir-q2-2026-earnings | Palantir Q2 2026 earnings | scouted | — |
-| 2026-07-22-paypal-stripe-bid-rejected | PayPal board rejects USD 53B Stripe-Advent takeover offer | scouted | — |
-| 2026-07-22-pge-q2-earnings-wildfire | PG&E Q2 2026 earnings amid active Southern California wildfire | scouted | — |
-| 2026-07-22-pls-canmax-lithium-supply-deal | Pilbara Minerals signs lithium supply deal with China's Canmax | scouted | — |
-| 2026-07-22-prologium-nasdaq-ipo | ProLogium solid-state battery Nasdaq listing | scouted | — |
-| 2026-07-22-qantas-pilots-strike-ballot | Qantas long-haul pilot strike ballot opens July 27 | scouted | — |
-| 2026-07-22-qualcomm-fq3-2026-earnings | Qualcomm fiscal Q3 2026 earnings | scouted | — |
-| 2026-07-22-rapid7-jana-takeover-speculation | Rapid7 surges on Jana Partners activist push for sale | scouted | — |
-| 2026-07-22-robert-half-q2-earnings | Robert Half Q2 2026 earnings (Jul 23) test staffing demand outlook | scouted | — |
-| 2026-07-22-royal-caribbean-q2-2026-earnings | Royal Caribbean Q2 2026 earnings | scouted | — |
+| 2026-07-21-vertex-crinetics-deal-close | Vertex acquisition of Crinetics pending close | researched | — |
+| 2026-07-21-zim-hapaglloyd-merger-closing | ZIM-Hapag-Lloyd USD 35/share merger awaits Israeli state approval | scheduled | — |
+| 2026-07-22-abcellera-phase2-readout | AbCellera ABCL635 Phase 2 topline data due Q3 2026 | researched | — |
+| 2026-07-22-accenture-source-code-breach | Accenture confirms breach after threat actor claims stolen source code | researched | — |
+| 2026-07-22-adtran-preliminary-q2-miss | Adtran preliminary Q2 revenue and margin miss | researched | — |
+| 2026-07-22-american-airlines-q2-2026 | American Airlines Q2 2026 earnings | researched | — |
+| 2026-07-22-ast-spacemobile-bluebird-launch | AST SpaceMobile BlueBirds 11-13 Orbital Launch | researched | — |
+| 2026-07-22-atea-hcv-phase3-readout | Atea Pharmaceuticals nears first Phase 3 HCV topline results | researched | — |
+| 2026-07-22-atnt-starlink-mobile-threat | AT&T weighed down by Starlink direct-to-device mobile threat | researched | — |
+| 2026-07-22-avanos-medical-merger-close | Avanos Medical take-private merger targeted to close July 27 | researched | — |
+| 2026-07-22-avav-p550-army-order | AeroVironment secures first full-rate production order for P550 drone | researched | — |
+| 2026-07-22-axalta-akzonobel-merger-vote | Axalta sets August 5 shareholder vote on AkzoNobel merger | researched | — |
+| 2026-07-22-bae-saudi-arms-sale | US clears ~USD 2B BAE Systems-led Saudi air-defense arms sale | researched | — |
+| 2026-07-22-banner-pacific-financial-merger-vote | Pacific Financial sets August 12 vote on Banner Corp merger | scheduled | — |
+| 2026-07-22-biomarin-voxzogo-pdufa | BioMarin VOXZOGO full-approval PDUFA date | researched | — |
+| 2026-07-22-brazil-section301-tariff-25pct | US 25% Section 301 tariff on Brazil takes effect | researched | — |
+| 2026-07-22-brazil-section301-tariff-stacking | US Section 301 tariff on Brazil goods stacks to 35% before easing | researched | — |
+| 2026-07-22-calmaine-doj-antitrust-suit | DOJ and states sue Cal-Maine and Hickman's over egg price-fixing | researched | — |
+| 2026-07-22-canada-section338-dairy-alcohol-tariff | US Section 338 50% tariff on Canadian dairy, alcohol, cement, furniture takes effect Aug 19 | researched | — |
+| 2026-07-22-capricor-pdufa-deramiocel | Capricor Deramiocel PDUFA decision | scheduled | — |
+| 2026-07-22-capstone-copper-chile-strike | Capstone Copper faces Chile labor strike risk at Mantoverde | researched | — |
+| 2026-07-22-carnival-q2-2026-earnings | Carnival Q2 2026 earnings | researched | — |
+| 2026-07-22-clacton-byelection-gbp | Clacton by-election framed as referendum on Farage/Reform UK | researched | — |
+| 2026-07-22-comcast-nbcuniversal-spinoff | Comcast advances NBCUniversal/Sky spin-off to split media and tech | scheduled | — |
+| 2026-07-22-copper-section232-tariff-deadline | Section 232 copper tariff implementation deadline Aug 1 | researched | — |
+| 2026-07-22-craneware-cyberattack | Craneware discloses cyberattack with data exfiltration | researched | — |
+| 2026-07-22-critical-metals-tanbreez-stake | Critical Metals boosts Greenland Tanbreez rare earth stake to 92.5 percent | researched | — |
+| 2026-07-22-cvs-health-q2-earnings | CVS Health Q2 2026 Earnings | researched | — |
+| 2026-07-22-dea-cannabis-rescheduling-decision | DEA Marijuana Rescheduling Final Decision Pending | researched | — |
+| 2026-07-22-disney-q3-fy2026-earnings | Disney fiscal Q3 2026 earnings | researched | — |
+| 2026-07-22-draftkings-prediction-market-share-loss | DraftKings loses user momentum to Kalshi/Polymarket during World Cup | researched | — |
+| 2026-07-22-dynagas-russia-lng-sanctions-veto | Dynagas LNG Partners in the crosshairs of Greek EU sanctions veto | researched | — |
+| 2026-07-22-edison-intl-wildfire-liability | Edison International falls on new Southern California wildfire | researched | — |
+| 2026-07-22-eurobank-q2-earnings | Eurobank sets Q2 2026 earnings date amid Greek bank rally | researched | — |
+| 2026-07-22-european-banks-q2-earnings-wave | European banks kick off Q2 earnings on rates/trading windfall | researched | — |
+| 2026-07-22-fanuc-q1-fy27-earnings | Fanuc earnings Jul 31: factory-automation demand read-through for global capex | researched | — |
+| 2026-07-22-faraday-future-reverse-split | Faraday Future 1-for-150 reverse stock split | researched | — |
+| 2026-07-22-fcc-upper-cband-auction-ses-clearing | FCC adopts upper C-band auction rules; SES faces USD 3.6B clearing cost vs incentive payments | researched | — |
+| 2026-07-22-fedex-freight-first-standalone-earnings | FedEx Freight first full standalone quarter as pure-play LTL | researched | — |
+| 2026-07-22-first-bancorp-first-carolina-merger | First Bancorp to Acquire First Carolina Bancshares | researched | — |
+| 2026-07-22-flex-cloud-power-spinoff | Flex to separate Cloud and Power Infrastructure into new public company | researched | — |
+| 2026-07-22-franco-nevada-gold-selloff | Franco-Nevada relative resilience amid gold price slide | researched | — |
+| 2026-07-22-ge-vernova-q2-earnings | GE Vernova reports Q2 2026 earnings amid grid/power demand boom | researched | — |
+| 2026-07-22-henry-boot-profit-warning | Henry Boot issues second profit warning of 2026 | researched | — |
+| 2026-07-22-homebuilders-mortgage-rate-pressure | Homebuilder stocks pressured as mortgage rates climb past 6.5% | researched | — |
+| 2026-07-22-india-us-trade-deadline | India-US trade deal tariff deadline | researched | — |
+| 2026-07-22-ionis-eplontersen-attr-cm-data | Ionis/AstraZeneca eplontersen ATTR-CM Phase 3 data at conference | researched | — |
+| 2026-07-22-iren-ai-contract-rerating | IREN re-rates on USD 2.8B AI contract haul, raised ARR target | researched | — |
+| 2026-07-22-jetblue-fuel-capacity-cuts | JetBlue slows hiring, cuts capacity on soaring jet fuel costs | researched | — |
+| 2026-07-22-kbr-mission-tech-spinoff | KBR targets 2H26 close for Mission Technology Solutions spin-off | researched | — |
+| 2026-07-22-kioxia-viasat-patent-appeal | Kioxia Federal Circuit appeal of USD 229M Viasat patent verdict | researched | — |
+| 2026-07-22-kratos-q2-2026-earnings | Kratos Defense Q2 2026 earnings | researched | — |
+| 2026-07-22-l3harris-missile-defense-contract | L3Harris wins Missile Defense Agency IDIQ contract (value unverified - see note) | researched | — |
+| 2026-07-22-legend-biotech-takeover-bid | Legend Biotech reportedly receives takeover bid | researched | — |
+| 2026-07-22-lng-canada-phase2-fid | LNG Canada Phase 2 FID approaching, doubling export capacity | researched | — |
+| 2026-07-22-lrcx-china-export-controls | Lam Research China chip export control risk | researched | — |
+| 2026-07-22-lucid-h1-2026-results | Lucid H1 2026 results amid bankruptcy-rumor rebuttal | researched | — |
+| 2026-07-22-magna-canada-tariff-escalation | Magna Canada auto tariff escalation | researched | — |
+| 2026-07-22-masimo-apple-patent-verdict | Masimo patent verdict against Apple upheld by federal judge | researched | — |
+| 2026-07-22-memory-chip-earnings-rally | Memory chip stocks surge ahead of Q2 earnings reports | researched | — |
+| 2026-07-22-moodys-q2-earnings | Moody's reports Q2 2026 earnings amid ratings-demand cycle | researched | — |
+| 2026-07-22-mp-materials-china-entity-listing | MP Materials added to China export control entity list | researched | — |
+| 2026-07-22-neogen-chemicals-downgrade | Neogen Chemicals credit rating cut on battery project delays | researched | — |
+| 2026-07-22-next-bridge-hydrocarbons-special-dividend | Next Bridge Hydrocarbons special stock dividend distribution | researched | — |
+| 2026-07-22-nextcure-avere-merger | NextCure Avere Therapeutics merger close | researched | — |
+| 2026-07-22-nintendo-switch2-price-hike | Nintendo Switch 2 price rises to USD 499 on September 1 | researched | — |
+| 2026-07-22-nuscale-q2-earnings | NuScale Power Q2 2026 earnings call | researched | — |
+| 2026-07-22-nvidia-nebius-stake | Nvidia discloses 9.3% passive stake in Nebius | researched | — |
+| 2026-07-22-olaplex-going-private | Olaplex going-private merger vote pending | researched | — |
+| 2026-07-22-olin-huntsman-merger-vote | Olin and Huntsman set August 25 shareholder votes on merger | researched | — |
+| 2026-07-22-opec-plus-august-meeting | OPEC+ Aug 2 meeting on production policy | researched | — |
+| 2026-07-22-otsuka-nuedexta-patent-expiry | Nuedexta patent expiry opens door to Hetero generic launch | researched | — |
+| 2026-07-22-palantir-q2-2026-earnings | Palantir Q2 2026 earnings | researched | — |
+| 2026-07-22-paypal-stripe-bid-rejected | PayPal board rejects USD 53B Stripe-Advent takeover offer | researched | — |
+| 2026-07-22-petrobras-q2-diesel-imports | Petrobras resumes diesel imports, Q2 production report due Jul 28 | researched | — |
+| 2026-07-22-pge-q2-earnings-wildfire | PG&E Q2 2026 earnings amid active Southern California wildfire | researched | — |
+| 2026-07-22-pls-canmax-lithium-supply-deal | Pilbara Minerals signs lithium supply deal with China's Canmax | researched | — |
+| 2026-07-22-prologium-nasdaq-ipo | ProLogium solid-state battery Nasdaq listing | researched | — |
+| 2026-07-22-qantas-pilots-strike-ballot | Qantas long-haul pilot strike ballot opens July 27 | scheduled | — |
+| 2026-07-22-qualcomm-fq3-2026-earnings | Qualcomm fiscal Q3 2026 earnings | researched | — |
+| 2026-07-22-rapid7-jana-takeover-speculation | Rapid7 surges on Jana Partners activist push for sale | researched | — |
+| 2026-07-22-reliance-jio-ipo-window | Reliance Jio IPO (~USD 4B, India's largest-ever) expected to list Aug-Oct 2026 | researched | — |
+| 2026-07-22-robert-half-q2-earnings | Robert Half Q2 2026 earnings (Jul 23) test staffing demand outlook | researched | — |
+| 2026-07-22-royal-caribbean-q2-2026-earnings | Royal Caribbean Q2 2026 earnings | researched | — |
 | 2026-07-22-samsung-galaxy-unpacked | Samsung Galaxy Unpacked foldable launch | researched | — |
-| 2026-07-22-samsung-galaxy-unpacked-foldable | Samsung Galaxy Unpacked: Z Fold 8 launch beats Apple to market | scouted | — |
+| 2026-07-22-samsung-galaxy-unpacked-foldable | Samsung Galaxy Unpacked: Z Fold 8 launch beats Apple to market | researched | — |
 | 2026-07-22-servicenow-q2-fy26 | ServiceNow Q2 FY26 earnings | researched | — |
-| 2026-07-22-smci-preliminary-q4-update | Supermicro preliminary Q4 FY26 update: revenue soft, margins beat | scouted | — |
-| 2026-07-22-sony-stablecoin-charter | Sony Bank unit gets conditional OCC nod for stablecoin trust bank | scouted | — |
+| 2026-07-22-smci-preliminary-q4-update | Supermicro preliminary Q4 FY26 update: revenue soft, margins beat | researched | — |
+| 2026-07-22-sony-stablecoin-charter | Sony Bank unit gets conditional OCC nod for stablecoin trust bank | researched | — |
 | 2026-07-22-southwest-airlines-q2-fy26 | Southwest Airlines Q2 FY26 earnings | researched | — |
-| 2026-07-22-spacex-q2-earnings | SpaceX first earnings report as public company | scouted | — |
-| 2026-07-22-steadfast-kkr-consortium-bid | KKR joins Amwins-Dragoneer consortium bid for Steadfast Group | scouted | — |
-| 2026-07-22-structure-therapeutics-obesity-data | Structure Therapeutics oral obesity pill liver-safety readout | scouted | — |
+| 2026-07-22-spacex-q2-earnings | SpaceX first earnings report as public company | researched | — |
+| 2026-07-22-steadfast-kkr-consortium-bid | KKR joins Amwins-Dragoneer consortium bid for Steadfast Group | researched | — |
+| 2026-07-22-stellantis-q2-earnings-tariff-cut | Stellantis Q2 2026 earnings Jul 30, tariff hit trimmed to EUR 1.3B from EUR 1.6B | researched | — |
+| 2026-07-22-structure-therapeutics-obesity-data | Structure Therapeutics oral obesity pill liver-safety readout | researched | — |
 | 2026-07-22-texas-instruments-q2-fy26 | Texas Instruments Q2 FY26 earnings | researched | — |
-| 2026-07-22-tsm-pixel-11-chip-demand | TSMC Pixel 11 Tensor G6 chip demand | scouted | — |
+| 2026-07-22-tsm-pixel-11-chip-demand | TSMC Pixel 11 Tensor G6 chip demand | researched | — |
+| 2026-07-22-turkey-cbrt-july-rate-decision | Turkey central bank (CBRT) rate decision July 23, expected hold at 37% | researched | — |
 | 2026-07-22-uber-q2-2026-earnings | Uber Q2 2026 earnings | scouted | — |
 | 2026-07-22-usa-rare-earth-serra-verde-close | USA Rare Earth-Serra Verde merger set to close by end of August | scouted | — |
 | 2026-07-22-verizon-labor-contract-expiry | Verizon Northeast labor contract for 20,000 workers expires Aug 1 | scouted | — |
+| 2026-07-22-vietnam-section122-tariff-sunset | US Section 122 10% blanket tariff scheduled to sunset ~Jul 24, appeal pending | scouted | — |
 | 2026-07-22-weatherford-ncs-merger-close | Weatherford-NCS merger closing timeline (2H 2026) | scouted | — |
 | 2026-07-22-wetherspoon-fourth-profit-warning | JD Wetherspoon issues fourth profit warning of the year | scouted | — |
 | 2026-07-22-weyerhaeuser-softwood-lumber-tariff | US softwood lumber AR7 final tariff determination due August 2026 | scouted | — |
 | 2026-07-22-zillow-redfin-ftc-antitrust | FTC antitrust case against Zillow and Redfin cleared to proceed | scouted | — |
+| 2026-07-23-aig-q2-earnings | AIG Q2 FY26 earnings | scouted | — |
+| 2026-07-23-amylyx-lucidity-phase3 | Amylyx LUCIDITY Phase 3 Readout Due Q3 2026 | scouted | — |
+| 2026-07-23-arabica-coffee-supply-squeeze | Arabica coffee stocks hit tightest level since 2024 on harvest disruption | scouted | — |
+| 2026-07-23-argentina-merval-energy-oil-rally | Argentina Merval energy rally on oil spike | scouted | — |
+| 2026-07-23-assurant-q2-earnings | Assurant Q2 FY26 earnings | scouted | — |
+| 2026-07-23-atlantic-hurricane-season-peak-catbonds | Atlantic hurricane season peak tests cat bond rally | scouted | — |
+| 2026-07-23-bhp-escondida-strike-risk | Strike risk looms at BHP's Escondida and Spence copper mines | scouted | — |
+| 2026-07-23-biorad-sartorius-stake-review | Bio-Rad Weighs Sale of Sartorius Stake Amid Elliott Pressure | scouted | — |
+| 2026-07-23-biovie-sunrise-pd-phase3 | BioVie SUNRISE-PD Phase 3 Data | scouted | — |
+| 2026-07-23-bmy-cobenfy-alzheimers-psychosis-data | Bristol Myers Squibb tests Cobenfy in Alzheimer's psychosis | scouted | — |
+| 2026-07-23-boeing-smbc-737max-order | SMBC Aviation Capital orders 100 Boeing 737 MAX jets | scouted | — |
 | 2026-07-23-boj-july-decision | Bank of Japan July rate decision | researched | — |
+| 2026-07-23-bouygues-sfr-telecom-consolidation | Bouygues, Iliad, Orange carve up SFR in French telecom consolidation | scouted | — |
+| 2026-07-23-brazil-footwear-tariff-effective | US 25% tariff on Brazilian footwear takes effect | scouted | — |
+| 2026-07-23-broadcom-q3-fy26-earnings | Broadcom Q3 FY2026 earnings, Sept 3 | scouted | — |
+| 2026-07-23-brookfield-bloom-ai-partnership | Brookfield and Bloom Energy Expand AI Infrastructure Partnership to USD 25B | scouted | — |
+| 2026-07-23-centrus-energy-smallcap-600 | Centrus Energy added to S&P SmallCap 600 index | scouted | — |
+| 2026-07-23-china-vanke-h1-loss-widening | China Vanke H1 loss widening ahead of interim results | scouted | — |
+| 2026-07-23-cms-2027-opps-site-neutral-rule | CMS CY2027 hospital OPPS rule expands site-neutral payment cuts | scouted | — |
+| 2026-07-23-cms-medicaid-managed-care-integrity-rule | CMS to release Medicaid managed care integrity rule | scouted | — |
+| 2026-07-23-cocoa-ivory-coast-ghana-harvest-shortfall | Cocoa harvest shortfall in Ivory Coast and Ghana | scouted | — |
+| 2026-07-23-conocophillips-q2-2026-earnings | ConocoPhillips Q2 2026 Earnings | scouted | — |
+| 2026-07-23-coursera-q2-earnings | Coursera Q2 2026 earnings due July 29 | scouted | — |
+| 2026-07-23-cxmt-shanghai-star-ipo | ChangXin Memory Technologies (CXMT) Shanghai STAR Board IPO | scouted | — |
+| 2026-07-23-domo-progress-asset-sale | Domo sells assets to Progress Software for USD 400 million, becomes cash shell | scouted | — |
+| 2026-07-23-drc-cobalt-export-quota-system | DRC Cobalt Export Quota Enforcement Squeezes Miner Allocations | scouted | — |
+| 2026-07-23-ea-buyout-eu-subsidy-decision | EA's USD 55B take-private awaits EU subsidy approval | scouted | — |
+| 2026-07-23-easyjet-apollo-bidding-war | easyJet Apollo takeover bid deadline | scouted | — |
 | 2026-07-23-ecb-july-decision | ECB July rate decision | researched | — |
 | 2026-07-23-ecb-rate-decision | ECB rate decision | scouted | — |
+| 2026-07-23-elliott-ccc-intelligent-stake | Elliott Builds Stake in CCC Intelligent Solutions as Sale Explored | scouted | — |
+| 2026-07-23-equinox-orla-gold-merger-vote | Equinox Gold-Orla Mining combination awaits shareholder votes | scouted | — |
+| 2026-07-23-eu-cbam-steel-tariff-impact | EU CBAM certificate costs and ETS Phase 5 reform pressure steel importers | scouted | — |
+| 2026-07-23-five-below-cyber-breach | Five Below discloses social-engineering cybersecurity breach | scouted | — |
+| 2026-07-23-ford-q2-earnings | Ford Q2 2026 earnings, July 28 | scouted | — |
+| 2026-07-23-fortinet-q2-fy26-earnings | Fortinet Q2 FY2026 earnings call set for July 29 | scouted | — |
 | 2026-07-23-freeport-mcmoran-q2-copper-tariff | Freeport-McMoRan Q2 earnings to show first full-quarter copper-tariff windfall | scouted | — |
+| 2026-07-23-gamestop-ebay-takeover-pursuit | GameStop escalates unsolicited eBay takeover pursuit | scouted | — |
+| 2026-07-23-ghana-gold-buyback-program | Ghana GoldBod 30% Mandatory Gold Purchase Program Takes Effect | scouted | — |
+| 2026-07-23-gold-mining-rally-sibanye | Gold and silver miners rally as bullion holds near record highs | scouted | — |
 | 2026-07-23-honeywell-q2-fy26 | Honeywell Q2 FY26 earnings | researched | — |
+| 2026-07-23-houthi-red-sea-saudi-blockade | Houthi blockade of Saudi Red Sea ports widens Iran war | scouted | — |
+| 2026-07-23-hpcl-india-quarterly-loss | HPCL India quarterly loss on crude cost spike | scouted | — |
+| 2026-07-23-iberdrola-caruna-acquisition | Iberdrola to buy 80% of Finland's Caruna for EUR 2 billion | scouted | — |
+| 2026-07-23-iliad-altice-france-merger-review | EU refers Iliad-Altice France asset carve-up to French regulator | scouted | — |
+| 2026-07-23-insmed-brensocatib-bronchiectasis-launch | Insmed's brensocatib approval ramp for non-CF bronchiectasis | scouted | — |
 | 2026-07-23-intel-q2-fy26 | Intel Q2 FY26 earnings | researched | — |
+| 2026-07-23-io-biotech-melanoma-phase3 | IO Biotech Phase 3 Melanoma Data Readout | scouted | — |
+| 2026-07-23-iran-hormuz-conflict-escalation | Iran-Israel-US Ceasefire Collapse Risk Threatens Hormuz Oil Flow | scouted | — |
+| 2026-07-23-jana-blackline-stake | Jana Partners Builds BlackLine Stake | scouted | — |
+| 2026-07-23-jana-everpure-stake | Jana Partners Builds Activist Stake in Everpure | scouted | — |
+| 2026-07-23-jersey-mikes-ipo | Jersey Mike's IPO roadshow, NYSE debut expected July 30 | scouted | — |
+| 2026-07-23-kenvue-kimberly-clark-antitrust | Kenvue/Kimberly-Clark merger pending antitrust clearance | scouted | — |
+| 2026-07-23-kospi-softbank-ai-capex-rally | KOSPI SoftBank AI capex rally | scouted | — |
+| 2026-07-23-leslies-chapter11-review | Leslie's Weighs Chapter 11 Bankruptcy Amid Debt Talks | scouted | — |
 | 2026-07-23-lockheed-martin-q2-fy26 | Lockheed Martin Q2 FY26 earnings | researched | — |
+| 2026-07-23-lowes-q2-earnings | Lowe's Q2 2026 earnings, Aug 19 | scouted | — |
+| 2026-07-23-macau-july-ggr-release | Macau July gaming revenue release | scouted | — |
+| 2026-07-23-maersk-container-freight-surge | Container freight rates hit 22-month high on peak-season capacity crunch | scouted | — |
 | 2026-07-23-mastercard-q2-fy26 | Mastercard Q2 FY26 earnings | researched | — |
+| 2026-07-23-mirum-volixibat-pfic-data | Mirum Pharmaceuticals volixibat PFIC data readout | scouted | — |
+| 2026-07-23-mitie-ocs-takeover | Mitie shareholders back OCS Group GBP 3.1bn takeover | scouted | — |
+| 2026-07-23-moderna-flu-vaccine-pdufa | Moderna mRNA-1010 flu vaccine PDUFA due August 5 | scouted | — |
+| 2026-07-23-mosaic-china-phosphate-export-ban | China phosphate export restriction supports fertilizer pricing into August | scouted | — |
+| 2026-07-23-nasdaq-inc-q2-fy26 | Nasdaq Inc Q2 2026 Earnings | scouted | — |
+| 2026-07-23-navitas-q2-2026-earnings | Navitas Semiconductor Q2 2026 earnings | scouted | — |
+| 2026-07-23-netflix-content-slate-catalyst | Netflix ad-tier and content slate momentum into H2 2026 | scouted | — |
 | 2026-07-23-nokia-q2-fy26-earnings | Nokia Q2/H1 FY26 earnings | scouted | — |
+| 2026-07-23-northern-star-elliott-strategic-review | Elliott takes AUB stake in Northern Star Resources, pushes strategic review | scouted | — |
+| 2026-07-23-ondas-defense-contract-pipeline | Ondas Holdings scaling defense/counter-drone contract backlog | scouted | — |
+| 2026-07-23-palo-alto-q4-fy26-earnings | Palo Alto Networks fiscal Q4 2026 earnings, Aug 24 | scouted | — |
+| 2026-07-23-pan-american-silver-q2-earnings | Pan American Silver reports Q2 2026 results Aug 12 | scouted | — |
+| 2026-07-23-peco-exelon-strike | PECO workers' first-ever strike pressures Exelon utility earnings | scouted | — |
+| 2026-07-23-pool-corp-q2-fy26 | Pool Corp Q2 2026 Earnings | scouted | — |
+| 2026-07-23-praxis-ulixacaltamide-pdufa | Praxis ulixacaltamide PDUFA date set for essential tremor | scouted | — |
+| 2026-07-23-ptc-fiscal-q3-earnings | PTC Inc fiscal Q3 2026 earnings, July 29 | scouted | — |
+| 2026-07-23-ptc-sepiapterin-pku-phase3 | PTC Therapeutics Sepiapterin Phase 3 APHENITY Follow-up Data in PKU | scouted | — |
+| 2026-07-23-quantum-cyber-short-seller | Quantum Cyber Rebuts Short-Seller Report on Drone Tech Claims | scouted | — |
+| 2026-07-23-quantumscape-q2-update | QuantumScape Q2 update sends shares down on production timeline | scouted | — |
+| 2026-07-23-rba-august-rate-decision | RBA August rate decision: hold vs hike split | scouted | — |
+| 2026-07-23-real-remax-merger-vote | Real Brokerage and RE/MAX shareholder votes on merger | scouted | — |
+| 2026-07-23-regenxbio-navsunli-resubmission | REGENXBIO aligns with FDA on NAVSUNLI Hunter syndrome BLA resubmission | scouted | — |
+| 2026-07-23-rheinmetall-order-backlog | Rheinmetall's record defense order backlog offset by F126 program loss | scouted | — |
+| 2026-07-23-rli-corp-q2-fy26 | RLI Corp Q2 2026 Earnings | scouted | — |
+| 2026-07-23-rocket-lab-neutron-debut-q4 | Rocket Lab Neutron rocket debut slips to Q4 2026 | scouted | — |
+| 2026-07-23-rtx-q2-fy26 | RTX Q2 2026 Earnings | scouted | — |
+| 2026-07-23-ryanair-q1-profit-slump-mideast | Ryanair Q1 profit slump on Mideast fuel costs | scouted | — |
+| 2026-07-23-sec-regulation-crypto-rulemaking | SEC 'Regulation Crypto' Rulemaking Package Expected in July | scouted | — |
+| 2026-07-23-section232-polysilicon-decision | Section 232 polysilicon tariff proclamation expected early August | scouted | — |
+| 2026-07-23-shake-shack-q2-earnings | Shake Shack Q2 2026 earnings, Aug 5 | scouted | — |
+| 2026-07-23-shopify-q2-2026-earnings | Shopify Q2 2026 earnings | scouted | — |
+| 2026-07-23-signet-jewelers-q2-fy27-earnings | Signet Jewelers Q2 FY2027 earnings expected late August | scouted | — |
+| 2026-07-23-smart-sand-special-dividend | Smart Sand declares special dividend payable Aug 12 | scouted | — |
+| 2026-07-23-spyre-skyline-phase2-readout | Spyre Therapeutics SKYLINE Part A Phase 2 IBD/UC Topline Data | scouted | — |
+| 2026-07-23-tmobile-grain-spectrum-deal | T-Mobile to acquire 600/800 MHz spectrum from Grain Management | scouted | — |
 | 2026-07-23-tmobile-q2-fy26 | T-Mobile Q2 FY26 earnings | researched | — |
+| 2026-07-23-tractor-supply-guidance-cut | Tractor Supply cuts 2026 comp-sales guidance, pulls long-term outlook | scouted | — |
+| 2026-07-23-transdigm-stellant-blocked | TransDigm Abandons Stellant Systems Deal After DOJ Antitrust Threat | scouted | — |
+| 2026-07-23-tvardi-tti101-hcc-data | Tvardi Therapeutics TTI-101 HCC topline data due 2H 2026 | scouted | — |
+| 2026-07-23-union-pacific-q2-2026-earnings | Union Pacific Q2 2026 Earnings Release | scouted | — |
 | 2026-07-23-union-pacific-q2-fy26 | Union Pacific Q2 FY26 earnings | researched | — |
+| 2026-07-23-upbound-group-breach-fraud | Upbound Group fintech breach used to create fraudulent leases | scouted | — |
+| 2026-07-23-us-q2-gdp-advance-estimate | US Q2 2026 GDP Advance Estimate Release | scouted | — |
+| 2026-07-23-var-energi-bluenord-merger | Var Energi to acquire BlueNord, creating Europe's largest independent E&P | scouted | — |
+| 2026-07-23-vaxart-vax31-phase3 | Vaxart Phase 3 VAX-31 Readout vs Prevnar 20 and Capvaxive | scouted | — |
+| 2026-07-23-volvo-battery-recall | Volvo Recalls 64,000 Vehicles Over High-Voltage Battery Fire Risk | scouted | — |
+| 2026-07-23-walmart-q2-fy27-earnings | Walmart Q2 FY2027 earnings, Aug 20 | scouted | — |
+| 2026-07-23-wendys-q2-earnings | Wendy's Q2 2026 earnings, Aug 7 | scouted | — |
+| 2026-07-23-zurich-beazley-insurance-takeover | Zurich Beazley takeover completion window | scouted | — |
+| 2026-07-24-ag-equipment-tariff-cut | US cuts farm/construction equipment tariffs to 15pct, easing CNH and AGCO cost pressure | scouted | — |
+| 2026-07-24-amd-epyc-venice-launch | AMD launches EPYC Venice server CPU on TSMC N2 | scouted | — |
 | 2026-07-24-american-express-q2-fy26 | American Express Q2 FY26 earnings | scouted | — |
+| 2026-07-24-applied-digital-earnings | Applied Digital (APLD) Q4 earnings due July 27 | scouted | — |
+| 2026-07-24-blackstone-mortgage-earnings | Blackstone Mortgage Trust (BXMT) Q2 earnings July 28 | scouted | — |
+| 2026-07-24-canada-tariff-50pct | 50% US tariff on Canadian imports takes effect Aug 19 | scouted | — |
 | 2026-07-24-charter-communications-q2-fy26 | Charter Communications Q2 FY26 earnings | scouted | — |
+| 2026-07-24-china-chip-export-controls | China weighs tighter AI chip and export controls | scouted | — |
+| 2026-07-24-country-garden-default-risk | Country Garden misses coupon payment as China curbs developer offshore loans | scouted | — |
+| 2026-07-24-denison-phoenix-construction | Denison Mines advances Phoenix uranium mine construction | scouted | — |
+| 2026-07-24-elbit-systems-cbp-contract | Elbit Systems of America wins CBP border tech contracts | scouted | — |
+| 2026-07-24-fcc-cband-auction-blocks-spacex | FCC Approves Upper C-Band Satellite Auction, Blocks SpaceX Bid | scouted | — |
+| 2026-07-24-fda-vape-enforcement-discretion | FDA shifts to enforcement discretion for unauthorized vape products | scouted | — |
+| 2026-07-24-ferrari-q2-2026-earnings | Ferrari reports Q2 2026 results | scouted | — |
 | 2026-07-24-hca-healthcare-q2-fy26 | HCA Healthcare Q2 FY26 earnings | scouted | — |
+| 2026-07-24-iqe-ai-datacenter-order | IQE secures USD 14M multi-year AI/datacenter production order | scouted | — |
+| 2026-07-24-lockheed-defense-contract-wins | Lockheed Martin books multi-billion defense contracts | scouted | — |
+| 2026-07-24-luxury-china-demand-recovery | LVMH and Richemont signal China luxury demand inflection | scouted | — |
+| 2026-07-24-meritage-homes-earnings | Meritage Homes (MTH) Q2 earnings July 29 | scouted | — |
+| 2026-07-24-mgm-resorts-earnings | MGM Resorts (MGM) Q2 earnings July 29 | scouted | — |
+| 2026-07-24-mi-homes-earnings | M/I Homes (MHO) Q2 earnings July 29 | scouted | — |
+| 2026-07-24-monday-com-restructuring | Monday.com announces 20% workforce cut in AI-era restructuring | scouted | — |
+| 2026-07-24-orthofix-cms-reimbursement-q2 | Orthofix Q2 2026 earnings to confirm CMS reimbursement reversal | scouted | — |
+| 2026-07-24-red-cat-earnings | Red Cat Holdings (RCAT) Q2 earnings due | scouted | — |
+| 2026-07-24-robotaxi-rules-battle | State-by-state robotaxi rule fights intensify after Waymo San Francisco incident | scouted | — |
 | 2026-07-24-section122-global-tariff-surcharge-expiry | Section 122 10% global tariff surcharge expires | scouted | — |
+| 2026-07-24-sunpower-earnings | SunPower (SPWR) Q2 earnings July 28 | scouted | — |
+| 2026-07-24-telos-aviation-vetting-contract | Telos wins Hawaii aviation worker vetting contract, expands federal book | scouted | — |
+| 2026-07-24-tenax-level-trial-readout | Tenax Therapeutics Phase 3 LEVEL topline data due August | scouted | — |
+| 2026-07-24-uec-q2-2026-earnings | Uranium Energy Corp reports Q2 2026 results | scouted | — |
 | 2026-07-24-uipath-short-seller-rebuttal | UiPath under short-seller pressure amid record 32% short interest | scouted | — |
+| 2026-07-24-visa-q3-fy26-earnings-stablecoin | Visa reports fiscal Q3 2026 earnings amid stablecoin platform scale-up | scouted | — |
+| 2026-07-24-western-union-stablecoin-rule | OCC stablecoin AML rule comment period closes | scouted | — |
+| 2026-07-24-xpo-q2-2026-earnings | XPO reports Q2 2026 earnings | scouted | — |
 | 2026-07-26-mannkind-furoscix-pdufa | MannKind Furoscix ReadyFlow autoinjector PDUFA | scouted | — |
 | 2026-07-27-cftc-prediction-markets-comment-close | CFTC sports prediction-markets rule comment period closes | scouted | — |
 | 2026-07-27-google-android-ai-layer-deadline | Google's EU-mandated 18-day deadline to open Android AI layer | scouted | — |
@@ -472,9 +609,11 @@
 | 2026-07-30-rivian-q2-fy26 | Rivian reports Q2 FY26 earnings, margin test after delivery beat | scouted | — |
 | 2026-07-30-unicredit-commerzbank-merger-battle | UniCredit tightens grip on Commerzbank ahead of merger showdown | scouted | — |
 | 2026-07-30-viatris-mr100a-pdufa | Viatris MR-100A-01 PDUFA | scouted | — |
+| 2026-07-31-colgate-palmolive-q2-fy26 | Colgate-Palmolive Q2 FY26 Earnings | scouted | — |
 | 2026-07-31-exxon-q2-oil-windfall | ExxonMobil Q2 earnings to capture crude spike from Hormuz tensions | scouted | — |
 | 2026-07-31-pharma-section232-tariffs | 100% pharma tariff on Annex III holdouts hits July 31 | scouted | — |
 | 2026-07-31-sec-regulation-crypto-proposal | SEC set to propose 'Regulation Crypto' rule this month | scouted | — |
+| 2026-08-01-alaska-airlines-pilot-contract-expiry | Alaska Airlines Pilot Contract Set to Expire, Strike Risk Rises | scouted | — |
 | 2026-08-01-beone-brukinsa-frontline-mcl-filing | BeOne's BRUKINSA succeeds in frontline mantle cell lymphoma trial | scouted | — |
 | 2026-08-01-first-solar-section232-polysilicon | First Solar faces Section 232 polysilicon tariff decision in early August | scouted | — |
 | 2026-08-01-genmab-abbvie-epcoritamab-filing | Epcoritamab hits primary endpoint in Phase 3 DLBCL trial | scouted | — |
