@@ -1,7 +1,7 @@
 ---
 id: 2026-07-22-qantas-pilots-strike-ballot
 title: Qantas long-haul pilot strike ballot opens July 27
-status: scouted
+status: scheduled
 created: '2026-07-22T17:49:00Z'
 event:
   type: geopolitical
