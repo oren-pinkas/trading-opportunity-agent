@@ -1,20 +1,19 @@
 ---
 id: 2026-07-25-ocs-mitie-acquisition
-title: OCS Group to acquire Mitie for USD 4.2B
+title: OCS Group to acquire Mitie for USD 4.17B
 status: scouted
-created: '2026-07-25T06:39:22Z'
+created: '2026-07-25T10:56:40Z'
 event:
   type: economic
-  summary: OCS Group agreed a GBP 3.1B recommended cash acquisition of UK facilities
-    manager Mitie, pending shareholder vote and CMA clearance, expected to close Q1
-    2027.
-  impact_window: '2027-03-31'
+  summary: OCS Group announced July 20 a USD 4.17B acquisition of UK facilities-management
+    firm Mitie, pending shareholder and regulatory approval.
+  impact_window: '2026-10-31'
 tickers:
-- MITFY
+- MTO.L
 sources:
-- title: OCS Announces the Recommended Acquisition of Mitie
-  url: https://www.globenewswire.com/news-release/2026/07/21/3330219/0/en/ocs-announces-the-recommended-acquisition-of-mitie-expanding-its-uk-headquartered-international-facilities-management-group.html
-  accessed_at: '2026-07-25T06:39:22Z'
+- title: US Market Movers Today - 22 July 2026
+  url: https://www.smartkarma.com/home/market-movers/us-market-movers-today-22-july-2026/
+  accessed_at: '2026-07-25T10:56:40Z'
 ---
 
-## Scouted 2026-07-25T06:39:22Z
+## Scouted 2026-07-25T10:56:40Z
